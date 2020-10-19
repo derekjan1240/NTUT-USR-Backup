@@ -1,0 +1,106 @@
+<div class="d-flex flex-column collaborative-partner-hambuger-button" onmouseenter=" triggerMenu()">
+    <span class="hambuger-line-one"></span>
+    <span class="hambuger-line-two mt-2"></span>
+    <span class="hambuger-line-three mt-2"></span>
+</div>
+<div id="collaborative-partner-menu" class="collaborative-partner-menu" onmouseleave=" triggerMenu()">
+    <div class="d-flex flex-column menu-content-container">
+        <div class="menu-title">○ 109-110學年度</div>
+        <div class="menu-sub-title">木創文化攪動深根計畫</div>
+        <div class="menu-sub-title">原住民部落安居構築計畫</div>
+        <div class="menu-sub-title">智慧物聯感測漁業</div>
+        <div class="menu-sub-title">陶瓷文化培力</div>
+        <div class="menu-sub-title">營造永續貢學環境</div>
+        <div class="menu-sub-title">青銀共創．友善療癒綠社區</div>
+    </div>
+
+    <div class="d-flex flex-column menu-content-container">
+        <div class="menu-title">○ 107-108學年度</div>
+        <div class="menu-sub-title">木創文化攪動深根計畫</div>
+        <div class="menu-sub-title">原住民部落安居構築計畫</div>
+        <div class="menu-sub-title">智慧物聯感測漁業</div>
+        <div class="menu-sub-title">陶瓷文化培力</div>
+        <div class="menu-sub-title">營造永續貢學環境</div>
+        <div class="menu-sub-title">青銀共創．友善療癒綠社區</div>
+    </div>
+
+    <div class="d-flex flex-column menu-content-container">
+        <div class="menu-title">○ 106學年度</div>
+        <div class="menu-sub-title">牡丹計畫</div>
+    </div>
+</div>
+
+<style type="text/css">
+    #collaborative-partner-menu {
+        display: none;
+        position: fixed;
+        left: 0;
+        width: 335px;
+        height: 100vh;
+        box-shadow: 3px 0 20px 0 #9c9c9c;
+        background-color: #f5f5f5;
+        z-index: 100;
+        overflow: scroll;
+    }
+
+    .menu-content-container {
+        margin-top: 40px;
+    }
+
+    .menu-content-container:first-of-type {
+        margin-top: 64px;
+    }
+
+    .menu-title {
+        padding-bottom: 20px;
+        margin-left: 29px;
+        font-size: 20px;
+        color: #cdaa7a;
+    }
+
+    .menu-sub-title {
+        cursor: pointer;
+        padding: 5px 0;
+        margin-left: 54px;
+        font-size: 18px;
+        color: #707070;
+    }
+
+    .menu-sub-title:hover {
+        color: tomato;
+    }
+
+    .collaborative-partner-hambuger-button {
+        cursor: pointer;
+        position: fixed;
+        top: 158px;
+        left: 38px;
+        z-index: 100;
+    }
+
+    .hambuger-line-one {
+        width: 42px;
+        height: 0;
+        border: solid 3px #c5c5c5;
+    }
+
+    .hambuger-line-two {
+        width: 42px;
+        height: 0;
+        opacity: 0.8;
+        border: solid 3px #cccccc;
+    }
+
+    .hambuger-line-three {
+        width: 42px;
+        height: 0;
+        opacity: 0.5;
+        border: solid 3px #cccccc;
+    }
+</style>
+
+<script>
+    function triggerMenu() {
+        $("#collaborative-partner-menu").animate({ width: 'toggle' });
+    }
+</script>
