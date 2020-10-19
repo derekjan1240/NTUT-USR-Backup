@@ -1,0 +1,33 @@
+<section class="d-none d-lg-block">
+    <div class="about-us-background"></div>
+    <img class="planets-background" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3335/574715321.png">
+</section>
+<style>
+    .about-us-background {
+        position: fixed;
+        top: 0px;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 987px;
+        background-image: linear-gradient(to bottom, #2a5867, #4998b2 86%);
+    }
+
+    .planets-background {
+        top: 49px;
+        position: fixed;
+    }
+</style>
+<script>
+    window.onscroll = function () { adjustBackgroundHeight() };
+
+    function adjustBackgroundHeight() {
+        if (document.documentElement.scrollTop > 1400) {
+            document.querySelector('.about-us-background').style.height = 0;
+            document.querySelector('.planets-background').style.display = 'none';
+        } else {
+            document.querySelector('.about-us-background').style.height = '987px';
+            document.querySelector('.planets-background').style.display = 'block';
+        }
+    }
+</script>
