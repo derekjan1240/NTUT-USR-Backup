@@ -1,13 +1,11 @@
-<section class="d-none d-lg-block">
-    <div class="collaborative-partner-background">
-        <div class="collaborative-partner-background-content-container w-100 text-center">
-            <h1 class="collaborative-partner-background-content-sub-title">109-110學年度</h1>
-            <hr class="collaborative-partner-background-content-hr">
-            <h1 class="collaborative-partner-background-content-title animate__animated animate__jello">智慧物聯感測漁業</h1>
-            <span class="collaborative-partner-background-content-button text-center">計畫網站</span>
-        </div>
+<div class="collaborative-partner-background">
+    <div class="collaborative-partner-background-content-container w-100 text-center">
+        <h1 class="collaborative-partner-background-content-sub-title">109-110學年度</h1>
+        <hr class="collaborative-partner-background-content-hr">
+        <h1 class="collaborative-partner-background-content-title animate__animated animate__jello">智慧物聯感測漁業</h1>
+        <span class="collaborative-partner-background-content-button text-center">計畫網站</span>
     </div>
-</section>
+</div>
 <style type="text/css">
     .collaborative-partner-background {
         background: url(https://osausr.ntut.edu.tw/var/file/1/1001/img/3367/591082441.png);
@@ -22,7 +20,13 @@
         font-family: "SegoeUI";
         position: absolute;
         color: #ffffff;
-        top: 337px;
+        top: 150px;
+    }
+
+    @media (min-width: 767px) {
+        .collaborative-partner-background-content-container {
+            top: 337px;
+        }
     }
 
     .collaborative-partner-background-content-title {
