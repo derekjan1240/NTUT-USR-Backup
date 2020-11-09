@@ -1,19 +1,17 @@
-<section class="d-none d-lg-block">
-    <div class="sdg-target-container">
-        <h1 class="w-100 text-center sdg-target-title">SDGs 關聯目標</h1>
+<div class="sdg-target-container">
+    <h1 class="w-100 text-center sdg-target-title">SDGs 關聯目標</h1>
 
-        <div class="sdg-container w-100">
-            <div class="d-flex justify-content-center">
-                <img alt="SDGs" class="sdg-icon" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/Image4.png"
-                    data-aos="flip-up" />
-                <img alt="SDGs" class="sdg-icon" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/Image5.png"
-                    data-aos="flip-up" data-aos-delay="300" />
-                <img alt="SDGs" class="sdg-icon" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/Image6.png"
-                    data-aos="flip-up" data-aos-delay="600" />
-            </div>
+    <div class="sdg-container w-100">
+        <div class="d-flex justify-content-center">
+            <img alt="SDGs" class="sdg-icon" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/Image4.png"
+                data-aos="flip-up" />
+            <img alt="SDGs" class="sdg-icon" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/Image5.png"
+                data-aos="flip-up" data-aos-delay="300" />
+            <img alt="SDGs" class="sdg-icon" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/Image6.png"
+                data-aos="flip-up" data-aos-delay="600" />
         </div>
     </div>
-</section>
+</div>
 <style type="text/css">
     .sdg-target-title {
         position: absolute;
@@ -31,6 +29,13 @@
 
     .sdg-icon {
         padding: 0 48px;
+    }
+
+    @media (max-width: 767px) {
+        .sdg-icon {
+            padding: 0;
+            width: 120px;
+        }
     }
 
     .sdg-target-container {
