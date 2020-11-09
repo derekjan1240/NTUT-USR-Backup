@@ -1,83 +1,96 @@
-<section id="Section_Organization" class="d-none d-lg-block">
-    <p class="float-on-bg bg-white organization-title w-100 text-center m-0">組織架構</p>
-
-    <div class="float-on-bg bg-white organization-container">
-        <hr class="organization-hr my-0" />
-        <div class="d-flex organization-team-container">
-            <div>
-                <p class="organization-team-text"><b>主 任：</b><br />
-                    <b>副主任：</b><br />
-                    <b>執行長：</b><br />
-                    <b>副執行長：</b><br />
-                    <b>策略組組長：</b><br />
-                    <b>實踐組組長：</b><br />
-                    <b>兼任正副研究員：</b></p>
+<section id="Section_Organization">
+    <p id="organizationTitle" class="float-on-bg bg-white w-100 text-center m-0">組織架構</p>
+    <div id="organizationContainer" class="float-on-bg bg-white">
+        <div id="organizationTeamContainer" class="row align-items-center">
+            <div class="table-responsive col-12 col-lg-7 col-xl-6">
+                <table id="menberTable" class="table table-borderless">
+                    <tbody>
+                        <tr>
+                            <th scope="row" nowrap="nowrap">副主任:</th>
+                            <td nowrap="nowrap">王錫福 校長</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" nowrap="nowrap">副主任:</th>
+                            <td nowrap="nowrap">楊重光 副校長</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" nowrap="nowrap">執行長:</th>
+                            <td nowrap="nowrap">黃志弘 設計學院院長</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" nowrap="nowrap">副執行長:</th>
+                            <td nowrap="nowrap">待聘</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" nowrap="nowrap">策略組組長:</th>
+                            <td nowrap="nowrap">陳建文 通識中心主任</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" nowrap="nowrap">實踐組組長:</th>
+                            <td nowrap="nowrap">楊琇惠 文發系系主任</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" rowspan="2" nowrap="nowrap">兼任正副研究員:</th>
+                            <td nowrap="nowrap">陳涵秀 文發系助理教授</td>
+                        </tr>
+                        <tr>
+                            <td nowrap="nowrap">詹傑聖 通識中心助理教授</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-
-            <div>
-                <p class="organization-team-text">王錫福 校長<br />
-                    楊重光 副校長<br />
-                    黃志弘 設計學院院長<br />
-                    待聘<br />
-                    陳建文 通識中心主任<br />
-                    楊琇惠 文發系系主任<br />
-                    陳涵秀 文發系助理教授<br />
-                    詹傑聖 通識中心助理教授</p>
+            <div class="col-12 col-lg-5 col-xl-6 text-center mt-5 mt-xl-0">
+                <img id="organizationTeamImage"
+                    src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3335/354008215.png" />
             </div>
-            <img class="organization-team-image"
-                src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3335/354008215.png" />
         </div>
-
-        <hr class="organization-hr my-0" />
     </div>
 </section>
 <style type="text/css">
-    .organization-container {
+    #organizationContainer {
         background: url(https://osausr.ntut.edu.tw/var/file/1/1001/img/3335/301514827.png);
         background-position: center;
         position: relative;
-        width: 1920px;
-        height: 858px;
+        width: 100vw;
+        min-height: 858px;
     }
 
-    .organization-title {
+    #organizationTitle {
         font-size: 45px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
         line-height: 1.33;
-        letter-spacing: normal;
         color: #4998b2;
-        padding-top: 540px;
+        padding-top: 200px;
     }
 
-    .organization-team-container {
-        position: relative;
-        left: 315px;
+    #organizationTeamContainer {
+        padding: 42px 50px 0;
     }
 
-    .organization-team-text {
-        position: relative;
-        top: 205px;
-        font-size: 34px;
+    #menberTable {
+        font-size: 25px;
         color: #000000;
     }
 
-    .organization-team-image {
-        position: relative;
-        left: 94px;
-        top: 85px;
+    .table>thead>tr>th,
+    .table>tbody>tr>th,
+    .table>tfoot>tr>th,
+    .table>thead>tr>td,
+    .table>tbody>tr>td,
+    .table>tfoot>tr>td {
+        border-top: 0px;
     }
 
-    .organization-hr {
-        position: relative;
-        top: 42px;
-        width: 1240px;
-        height: 0;
-        border: solid 1px #3d3d3d;
-    }
+    @media (min-width: 1366px) {
+        #organizationTitle {
+            padding-top: 540px;
+        }
 
-    .organization-hr:last-of-type {
-        top: 130px;
+        #organizationTeamContainer {
+            padding: 42px 243px 0;
+        }
+
+        #menberTable {
+            font-size: 34px;
+        }
     }
 </style>

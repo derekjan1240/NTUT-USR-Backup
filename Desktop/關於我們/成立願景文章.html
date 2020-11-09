@@ -1,4 +1,4 @@
-<section id="Section_Establishment_Vision" class="d-none d-lg-block">
+<section id="Section_Establishment_Vision">
     <div class="float-on-bg establishment-vision-container">
         <p class="establishment-vision-title animate__animated animate__jello">成立願景</p>
 
@@ -20,9 +20,29 @@
 
 <style>
     .establishment-vision-container {
-        width: 755px;
-        margin-left: 253px;
+        max-width: 75vw;
+        margin-left: 50px;
         margin-bottom: 100px;
+    }
+
+    @media (min-width: 767px) {
+        .establishment-vision-container {
+            max-width: 500px;
+        }
+    }
+
+    @media (min-width: 1023px) {
+        .establishment-vision-container {
+            max-width: 755px;
+            margin-left: 150px;
+        }
+    }
+
+    @media (min-width: 1366px) {
+        .establishment-vision-container {
+            max-width: 755px;
+            margin-left: 253px;
+        }
     }
 
     .establishment-vision-title {

@@ -1,12 +1,20 @@
-<section id="Section_Logo" class="d-none d-lg-block">
+<section id="Section_Logo">
     <div class="float-on-bg" id="logo-container">
-        <div class="logo-wrapper">
-            <img class="logo-icon shake-slow"" src=" https://osausr.ntut.edu.tw/var/file/1/1001/img/3335/734576452.png"
+        <div class="container d-block d-xl-none">
+            <div class="row justify-content-center">
+                <div id="logo-wrapper-phone" class="col-8 col-md-6">
+                    <img class="shake-slow" src=" https://osausr.ntut.edu.tw/var/file/1/1001/img/3335/734576452.png"
+                        data-aos="zoom-in-up" style="padding: 25% 15%;" />
+                </div>
+            </div>
+        </div>
+        <div class="logo-wrapper d-none d-xl-block">
+            <img class="logo-icon shake-slow" src=" https://osausr.ntut.edu.tw/var/file/1/1001/img/3335/734576452.png"
                 data-aos="zoom-in-up" />
         </div>
         <!-- Logo 含意說明 -->
         <img class="logo-description d-none" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3335/639955965.png" />
-        <p class="logo-temp-text">
+        <p class="logo-temp-text d-none d-xl-block">
             大學社會責任實踐 ,<br>
             University Social Responsibility , 簡稱 USR。<br>
             USR成立是為了實踐社會責任 , <br>
@@ -14,7 +22,7 @@
             幫助社會大眾 , <br>
             共同營造美好的未來 !
         </p>
-        <p class="logo-text">LOGO 理 念</p>
+        <p class="logo-text d-none d-xl-block">LOGO 理 念</p>
     </div>
 </section>
 <style type="text/css">
@@ -22,6 +30,14 @@
         margin-top: 350px;
         height: 1095px;
         background-image: url(https://osausr.ntut.edu.tw/var/file/1/1001/img/3335/104916399.png)
+    }
+
+    #logo-wrapper-phone {
+        display: flex;
+        justify-content: center;
+        box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.16);
+        background: white;
+        margin-top: 25%;
     }
 
     .logo-wrapper {
