@@ -12,7 +12,7 @@
         </span>
         <div class="collaborative-partner-feedback col-12 col-xl-8 mt-3 mt-xl-0">
             <div class="left-triangle"></div>
-            <p class="collaborative-partner-feedback-content">
+            <p class="collaborative-partner-feedback-content" onclick="showFeedbackModal(0)" style="cursor: pointer;">
                 在參與解決地方痛點的過程中，從一開始的茫茫然，到經過老師們的一翻指導，已開始上手知道要去哪找問題與找資源，而在這尋找的過程中也漸漸的學到蠻多的東西，如：地方魚塭的經營模式、地方人對當地溼地建設的看法等，且透過口湖地方場域的深耕經營，也了解了地方很多的過往與特色。
             </p>
         </div>
@@ -31,7 +31,7 @@
         </span>
         <div class="collaborative-partner-feedback col-12 col-xl-8 mt-3 mt-xl-0">
             <div class="right-triangle"></div>
-            <p class="collaborative-partner-feedback-content">
+            <p class="collaborative-partner-feedback-content" onclick="showFeedbackModal(1)" style="cursor: pointer;">
                 在參與解決地方痛點的過程中，從一開始的茫茫然，到經過老師們的一翻指導，已開始上手知道要去哪找問題與找資源，而在這尋找的過程中也漸漸的學到蠻多的東西，如：地方魚塭的經營模式、地方人對當地溼地建設的看法等，且透過口湖地方場域的深耕經營，也了解了地方很多的過往與特色。
             </p>
         </div>
@@ -44,6 +44,7 @@
         </span>
     </div>
 </div>
+
 
 <style>
     .collaborative-partner-feedbacks-container {
@@ -101,3 +102,38 @@
         border-color: transparent transparent transparent #ffffff;
     }
 </style>
+
+<script>
+    const collaborativePartnerFeedbacks = [
+        {
+            'avatar': 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/675109942.png',
+            'name': '孫同學',
+            'content': '在參與解決地方痛點的過程中，從一開始的茫茫然，到經過老師們的一翻指導，已開始上手知道要去哪找問題與找資源，而在這尋找的過程中也漸漸的學到蠻多的東西，如：地方魚塭的經營模式、地方人對當地溼地建設的看法等，且透過口湖地方場域的深耕經營，也了解了地方很多的過往與特色。',
+        },
+        {
+            'avatar': 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/411645215.png',
+            'name': '游同學',
+            'content': '在參與解決地方痛點的過程中，從一開始的茫茫然，到經過老師們的一翻指導，已開始上手知道要去哪找問題與找資源，而在這尋找的過程中也漸漸的學到蠻多的東西，如：地方魚塭的經營模式、地方人對當地溼地建設的看法等，且透過口湖地方場域的深耕經營，也了解了地方很多的過往與特色。',
+        }
+    ];
+
+    function showFeedbackModal(index) {
+        if (!collaborativePartnerFeedbacks[index]) {
+            return;
+        }
+
+        $('#collaborative-partner-feedback-template').find('#stuentAvatar').attr("src", collaborativePartnerFeedbacks[index].avatar);
+        $('#collaborative-partner-feedback-template').find('#studentName').text(collaborativePartnerFeedbacks[index].name);
+        $('#collaborative-partner-feedback-template').find('#studentFeedback').text(collaborativePartnerFeedbacks[index].content);
+
+
+        Swal.fire({
+            title: '',
+            width: $(window).width() > 1023 ? '60vw' : '100vw',
+            html: $('#collaborative-partner-feedback-template').html(),
+            showCloseButton: true,
+            showConfirmButton: false,
+            showCancelButton: false,
+        });
+    }
+</script>
