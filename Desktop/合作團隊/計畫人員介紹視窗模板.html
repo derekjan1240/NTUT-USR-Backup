@@ -2,16 +2,16 @@
     <div id="collaborative-partner-member-template">
         <div class="row p-0 p-md-5">
             <div class="col-md-3">
-                <div class="d-flex flex-column justify-content-center">
+                <div id="template-member-info-warpper" class="d-flex flex-column justify-content-center">
                     <div id="avatarWrapper" class="w-100 text-center">
                         <img id="personAvatar" class="w-100" alt="成員頭像">
                     </div>
-                    <p id="personName" class="text-center my-3"></p>
-                    <p id="personFrom" class="text-left"></p>
+                    <p id="personName" class="text-md-left my-5"></p>
+                    <p id="personFrom" class="text-md-left"></p>
                 </div>
             </div>
-            <div id="template-cintent-warpper" class="col-md-9 mt-3 mt-lg-0">
-                <div class="d-flex flex-column justify-content-center">
+            <div class="col-md-9 mt-5 mt-lg-0">
+                <div id="template-content-warpper" class="d-flex flex-column justify-content-center">
                     <h1 class="font-weight-bold text-left">學術研究專長：</h1>
                     <p id="personSkill" class="text-left p-0 mt-md-5"></p>
                     <p id="personIntro" class="text-left p-0 mt-md-5"></p>
@@ -22,6 +22,26 @@
 </section>
 
 <style>
+    #template-member-info-warpper {
+        margin-top: 100px;
+    }
+
+    #template-content-warpper {
+        margin: 15px;
+    }
+
+    @media (min-width: 767px) {
+        #template-content-warpper {
+            margin: 60px;
+        }
+    }
+
+    @media (min-width: 1366px) {
+        #template-content-warpper {
+            margin: 120px;
+        }
+    }
+
     #personAvatar {
         max-width: 174px;
     }
@@ -39,6 +59,7 @@
         line-height: 1.4;
         letter-spacing: 1.25px;
         color: #707070;
+        white-space: pre-line;
     }
 
     #personSkill,
