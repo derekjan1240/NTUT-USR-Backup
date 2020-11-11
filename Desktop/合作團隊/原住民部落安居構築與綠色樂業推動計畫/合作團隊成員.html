@@ -4,42 +4,58 @@
         <div class="row text-center justify-content-around">
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
                 <div class="d-flex flex-column align-items-center" data-aos="flip-left">
-                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3367/139540727.png" alt="成員照片" width="174"
+                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3335/567669650.png" alt="成員照片" width="174"
                         height="174">
-                    <p class="collaborative-partner-member-content-name">陳生明 專任教授</p>
-                    <p class="collaborative-partner-member-content-department">單位：化學工程與生物科技系</p>
+                    <p class="collaborative-partner-member-content-name">黃志弘 院長</p>
+                    <p class="collaborative-partner-member-content-department">單位：設計學院</p>
                 </div>
             </div>
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
                 <div class="d-flex flex-column align-items-center" data-aos="flip-left">
-                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3367/728190617.png" alt="成員照片" width="174"
+                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/11.png" alt="成員照片" width="174"
                         height="174">
-                    <p class="collaborative-partner-member-content-name">陳彥霖 專任副教授</p>
-                    <p class="collaborative-partner-member-content-department">單位：資訊工程系</p>
+                    <p class="collaborative-partner-member-content-name">陳建文 主任</p>
+                    <p class="collaborative-partner-member-content-department">單位：通識中心</p>
                 </div>
             </div>
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
                 <div class="d-flex flex-column align-items-center" data-aos="flip-left">
-                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3367/648838795.png" alt="成員照片" width="174"
+                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/11.png" alt="成員照片" width="174"
                         height="174">
-                    <p class="collaborative-partner-member-content-name">耿慶瑞 專任教授</p>
-                    <p class="collaborative-partner-member-content-department">單位：經營管理系</p>
+                    <p class="collaborative-partner-member-content-name">陳圳卿 副教授</p>
+                    <p class="collaborative-partner-member-content-department">單位：互動設計系</p>
                 </div>
             </div>
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
                 <div class="d-flex flex-column align-items-center" data-aos="flip-left">
-                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3367/368226921.png" alt="成員照片" width="174"
+                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/11.png" alt="成員照片" width="174"
                         height="174">
-                    <p class="collaborative-partner-member-content-name">劉祐綸 專任助理教授</p>
-                    <p class="collaborative-partner-member-content-department">單位：經營管理系</p>
+                    <p class="collaborative-partner-member-content-name">黃光廷 助理教授</p>
+                    <p class="collaborative-partner-member-content-department">單位：建築系</p>
                 </div>
             </div>
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
                 <div class="d-flex flex-column align-items-center" data-aos="flip-left">
-                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3367/599328654.png" alt="成員照片" width="174"
+                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/11.png" alt="成員照片" width="174"
                         height="174">
-                    <p class="collaborative-partner-member-content-name">余兆偉 博士後研究員</p>
-                    <p class="collaborative-partner-member-content-department">單位：資訊工程系</p>
+                    <p class="collaborative-partner-member-content-name">李魁鵬 副教授</p>
+                    <p class="collaborative-partner-member-content-department">能源與冷凍空調工程系</p>
+                </div>
+            </div>
+            <div class="collaborative-partner-member-content col-md-6 col-xl-3">
+                <div class="d-flex flex-column align-items-center" data-aos="flip-left">
+                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/3.png" alt="成員照片" width="174"
+                        height="174">
+                    <p class="collaborative-partner-member-content-name">黃儀婷 副教授</p>
+                    <p class="collaborative-partner-member-content-department">中原大學商業設計系</p>
+                </div>
+            </div>
+            <div class="collaborative-partner-member-content col-md-6 col-xl-3">
+                <div class="d-flex flex-column align-items-center" data-aos="flip-left">
+                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/11.png" alt="成員照片" width="174"
+                        height="174">
+                    <p class="collaborative-partner-member-content-name">羅恩加 博士</p>
+                    <p class="collaborative-partner-member-content-department">羅慶郎自然農場</p>
                 </div>
             </div>
         </div>
@@ -88,3 +104,29 @@
         letter-spacing: 1px;
     }
 </style>
+
+<script>
+    const collaborativePartnerMember = [];
+
+    function showPartnerMemberModal(index) {
+        if (!collaborativePartnerMember[index]) {
+            return;
+        }
+
+        $('#collaborative-partner-member-template').find('#personAvatar').attr("src", collaborativePartnerMember[index].avatar);
+        $('#collaborative-partner-member-template').find('#personName').text(collaborativePartnerMember[index].name);
+        $('#collaborative-partner-member-template').find('#personFrom').text(collaborativePartnerMember[index].from);
+        $('#collaborative-partner-member-template').find('#personSkill').text(collaborativePartnerMember[index].skill);
+        $('#collaborative-partner-member-template').find('#personIntro').text(collaborativePartnerMember[index].intro);
+
+
+        Swal.fire({
+            title: '',
+            width: $(window).width() > 1023 ? '60vw' : '100vw',
+            html: $('#collaborative-partner-member-template').html(),
+            showCloseButton: true,
+            showConfirmButton: false,
+            showCancelButton: false,
+        });
+    }
+</script>

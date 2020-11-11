@@ -3,7 +3,8 @@
     <div class="collaborative-partner-member-content-container w-100">
         <div class="row text-center justify-content-start">
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
-                <div class="d-flex flex-column align-items-center" data-aos="flip-left">
+                <div class="d-flex flex-column align-items-center" data-aos="flip-left"
+                    onclick="showPartnerMemberModal(0)" style="cursor: pointer;">
                     <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/144835366.png" alt="成員照片" width="174"
                         height="174">
                     <p class="collaborative-partner-member-content-name">吳舜堂 教授</p>
@@ -11,7 +12,8 @@
                 </div>
             </div>
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
-                <div class="d-flex flex-column align-items-center" data-aos="flip-left">
+                <div class="d-flex flex-column align-items-center" data-aos="flip-left"
+                    onclick="showPartnerMemberModal(1)" style="cursor: pointer;">
                     <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/250107907.png" alt="成員照片" width="174"
                         height="174">
                     <p class="collaborative-partner-member-content-name">張若菡 副教授</p>
@@ -19,32 +21,36 @@
                 </div>
             </div>
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
-                <div class="d-flex flex-column align-items-center" data-aos="flip-left">
-                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/144835366.png" alt="成員照片" width="174"
+                <div class="d-flex flex-column align-items-center" data-aos="flip-left"
+                    onclick="showPartnerMemberModal(2)" style="cursor: pointer;">
+                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/4.png" alt="成員照片" width="174"
                         height="174">
                     <p class="collaborative-partner-member-content-name">林承謙 副教授</p>
                     <p class="collaborative-partner-member-content-department">單位：商業設計系</p>
                 </div>
             </div>
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
-                <div class="d-flex flex-column align-items-center" data-aos="flip-left">
-                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/144835366.png" alt="成員照片" width="174"
+                <div class="d-flex flex-column align-items-center" data-aos="flip-left"
+                    onclick="showPartnerMemberModal(3)" style="cursor: pointer;">
+                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/3.png" alt="成員照片" width="174"
                         height="174">
                     <p class="collaborative-partner-member-content-name">范政揆 副教授</p>
                     <p class="collaborative-partner-member-content-department">單位：工業設計系</p>
                 </div>
             </div>
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
-                <div class="d-flex flex-column align-items-center" data-aos="flip-left">
-                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/144835366.png" alt="成員照片" width="174"
+                <div class="d-flex flex-column align-items-center" data-aos="flip-left"
+                    onclick="showPartnerMemberModal(4)" style="cursor: pointer;">
+                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/11.png" alt="成員照片" width="174"
                         height="174">
                     <p class="collaborative-partner-member-content-name">陳殿禮 教授</p>
                     <p class="collaborative-partner-member-content-department">單位：工業設計系</p>
                 </div>
             </div>
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
-                <div class="d-flex flex-column align-items-center" data-aos="flip-left">
-                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/144835366.png" alt="成員照片" width="174"
+                <div class="d-flex flex-column align-items-center" data-aos="flip-left"
+                    onclick="showPartnerMemberModal(5)" style="cursor: pointer;">
+                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/12.png" alt="成員照片" width="174"
                         height="174">
                     <p class="collaborative-partner-member-content-name">鍾盛賜 教師</p>
                     <p class="collaborative-partner-member-content-department">單位：台中市立東勢高工家具設計科</p>
@@ -96,3 +102,29 @@
         letter-spacing: 1px;
     }
 </style>
+
+<script>
+    const collaborativePartnerMember = [];
+
+    function showPartnerMemberModal(index) {
+        if (!collaborativePartnerMember[index]) {
+            return;
+        }
+
+        $('#collaborative-partner-member-template').find('#personAvatar').attr("src", collaborativePartnerMember[index].avatar);
+        $('#collaborative-partner-member-template').find('#personName').text(collaborativePartnerMember[index].name);
+        $('#collaborative-partner-member-template').find('#personFrom').text(collaborativePartnerMember[index].from);
+        $('#collaborative-partner-member-template').find('#personSkill').text(collaborativePartnerMember[index].skill);
+        $('#collaborative-partner-member-template').find('#personIntro').text(collaborativePartnerMember[index].intro);
+
+
+        Swal.fire({
+            title: '',
+            width: $(window).width() > 1023 ? '60vw' : '100vw',
+            html: $('#collaborative-partner-member-template').html(),
+            showCloseButton: true,
+            showConfirmButton: false,
+            showCancelButton: false,
+        });
+    }
+</script>
