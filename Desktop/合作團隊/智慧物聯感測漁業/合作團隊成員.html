@@ -3,7 +3,8 @@
     <div class="collaborative-partner-member-content-container w-100">
         <div class="row text-center justify-content-around">
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
-                <div class="d-flex flex-column align-items-center" data-aos="flip-left">
+                <div class="d-flex flex-column align-items-center" data-aos="flip-left"
+                    onclick="showPartnerMemberModal(0)" style="cursor: pointer;">
                     <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3367/139540727.png" alt="成員照片" width="174"
                         height="174">
                     <p class="collaborative-partner-member-content-name">陳生明 專任教授</p>
@@ -88,3 +89,37 @@
         letter-spacing: 1px;
     }
 </style>
+
+<script>
+    const collaborativePartnerMember = [
+        {
+            'avatar': 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3367/139540727.png',
+            'name': '陳生明 教授',
+            'from': '國立台灣大學化學所博士',
+            'skill': '生物感測器、化學感測器、分析化學、生物燃料電池',
+            'intro': '陳生明教授致力於貢獻研究專業、校際學術合作與產學合作，現服務於內政部臺灣化學感測器科技協會，曾接任理事長一職，積極推廣相關所學與教育訓練，讓更多的學生認識化學感測器相關領域之應用，在學術研究教學付出不遺餘力，努力培育科技產業之專業人才。近年努力實踐USR，將學術專業轉移至產業，幫助以養殖漁業為重的雲林口湖鄉。',
+        },
+    ];
+
+    function showPartnerMemberModal(index) {
+        if (!collaborativePartnerMember[index]) {
+            return;
+        }
+
+        $('#collaborative-partner-member-template').find('#personAvatar').attr("src", collaborativePartnerMember[index].avatar);
+        $('#collaborative-partner-member-template').find('#personName').text(collaborativePartnerMember[index].name);
+        $('#collaborative-partner-member-template').find('#personFrom').text(collaborativePartnerMember[index].from);
+        $('#collaborative-partner-member-template').find('#personSkill').text(collaborativePartnerMember[index].skill);
+        $('#collaborative-partner-member-template').find('#personIntro').text(collaborativePartnerMember[index].intro);
+
+
+        Swal.fire({
+            title: '',
+            width: $(window).width() > 1023 ? '60vw' : '100vw',
+            html: $('#collaborative-partner-member-template').html(),
+            showCloseButton: true,
+            showConfirmButton: false,
+            showCancelButton: false,
+        });
+    }
+</script>
