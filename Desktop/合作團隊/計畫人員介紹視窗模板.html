@@ -1,0 +1,54 @@
+<section class="d-none">
+    <div id="collaborative-partner-member-template">
+        <div class="row p-0 p-md-5">
+            <div class="col-md-3">
+                <div class="d-flex flex-column justify-content-center">
+                    <div id="avatarWrapper" class="w-100 text-center">
+                        <img id="personAvatar" class="w-100" alt="成員頭像">
+                    </div>
+                    <p id="personName" class="my-3"></p>
+                    <p id="personFrom"></p>
+                </div>
+            </div>
+            <div class="col-md-9 mt-3 mt-lg-0">
+                <div class="d-flex flex-column justify-content-center">
+                    <h1 class="font-weight-bold">學術研究專長：</h1>
+                    <p id="personSkill" class="text-left p-0 mt-md-5"></p>
+                    <p id="personIntro" class="text-left p-0 mt-md-5"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    #personAvatar {
+        max-width: 174px;
+    }
+
+    #personName {
+        font-size: 35px;
+        line-height: 1.34;
+        letter-spacing: 1.75px;
+        font-family: 'SegoeUI';
+        color: #000000;
+    }
+
+    #personFrom {
+        font-size: 35px;
+        line-height: 1.4;
+        letter-spacing: 1.25px;
+        color: #707070;
+    }
+
+    #personSkill,
+    #personIntro {
+        /* max-height: 65vh;
+        overflow-y: auto; */
+        font-size: 25px;
+        font-family: 'SegoeUI';
+        color: #707070;
+        letter-spacing: 3px;
+        line-height: 1.6;
+    }
+</style>
