@@ -1,44 +1,30 @@
-<section id="Section_Annual_Book" class="d-none d-lg-block">
+<section id="Section_Annual_Book">
     <div class="annual-book-container">
-        <h1 class="annual-book-title animate__animated animate__jello">年 度 專 刊</h1>
-
-        <div class="books-wrapper row" data-aos="flip-left">
-            <div class="col pr-28">
+        <h1 id="annualBookTitle" class="animate__animated animate__jello">年 度 專 刊</h1>
+        <div id="booksWrapper" class="row justify-content-center justify-content-xl-start" data-aos="flip-left">
+            <div class="col-md-4 book-wrapper">
                 <div class="d-flex flex-column">
                     <div class="p-2">
                         <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/895058478.png" />
                     </div>
-                    <div class="p-2 book-content-title">成果專刊</div>
-                    <div class="p-2 book-content-date">2019.03</div>
+                    <div class="pl-2">
+                        <div class="p-2 book-content-title font-weight-bold">成果專刊</div>
+                        <div class="p-2 book-content-date">2020.03</div>
+                    </div>
                 </div>
             </div>
-
-            <div class="col border-left pl-28 pr-28">
+            <div class="col-md-4 book-wrapper">
                 <div class="d-flex flex-column">
                     <div class="p-2">
                         <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/895058478.png" />
                     </div>
-                    <div class="p-2 book-content-title">成果專刊</div>
-                    <div class="p-2 book-content-date">2019.03</div>
-                </div>
-            </div>
-
-            <div class="col border-left pl-28">
-                <div class="d-flex flex-column">
-                    <div class="p-2">
-                        <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/895058478.png" />
+                    <div class="pl-2">
+                        <div class="p-2 book-content-title font-weight-bold">成果專刊</div>
+                        <div class="p-2 book-content-date">2019.03</div>
                     </div>
-                    <div class="p-2 book-content-title">成果專刊</div>
-                    <div class="p-2 book-content-date">2019.03</div>
                 </div>
             </div>
         </div>
-        <div class="paginate-container d-flex">
-            <span class="paginate paginate-active">1</span>
-            <span class="paginate ml-4">2</span>
-            <span class="paginate ml-4">3</span>
-        </div>
-    </div>
 </section>
 <style type="text/css">
     .annual-book-container {
@@ -47,23 +33,23 @@
         background-repeat: no-repeat;
         width: 100vw;
         margin-top: 120px;
-        height: 1046px;
     }
 
-    .annual-book-title {
-        position: absolute;
-        top: 278px;
-        left: 529px;
+    #annualBookTitle {
+        padding: 158px 0 61px 0;
+        text-align: center;
         color: #4998b2;
         font-size: 45px;
         line-height: 1.33;
     }
 
-    .books-wrapper {
-        width: 935px;
-        position: absolute;
-        left: 169px;
-        top: 399px;
+    #booksWrapper {
+        margin: 0;
+    }
+
+    .book-wrapper {
+        border-right: 1px solid;
+        border-right-color: #989898;
     }
 
     .book-content-title {
@@ -98,11 +84,14 @@
         background: rgba(73, 152, 178, 0.55);
     }
 
-    .pl-28 {
-        padding-left: 28px !important;
-    }
+    @media (min-width: 1366px) {
+        #annualBookTitle {
+            padding: 158px 0 61px 529px;
+            text-align: initial;
+        }
 
-    .pr-28 {
-        padding-right: 28px !important;
+        #booksWrapper {
+            margin: 0 816.5px 0 169px;
+        }
     }
 </style>
