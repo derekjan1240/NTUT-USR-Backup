@@ -2,10 +2,13 @@
     <div class="annual-book-container">
         <h1 id="annualBookTitle" class="animate__animated animate__jello">年 度 專 刊</h1>
         <div id="booksWrapper" class="row justify-content-center justify-content-xl-start" data-aos="flip-left">
-            <div class="col-md-4 book-wrapper">
+            <div class="col-md-4 book-wrapper" style="cursor: pointer;">
                 <div class="d-flex flex-column">
                     <div class="p-2">
-                        <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/895058478.png" />
+                        <a href="#" target="_blank" rel="noreferrer noopener">
+                            <img class="book-image"
+                                src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3225/317420232.png" />
+                        </a>
                     </div>
                     <div class="pl-2">
                         <div class="p-2 book-content-title font-weight-bold">成果專刊</div>
@@ -13,10 +16,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 book-wrapper">
+            <div class="col-md-4 book-wrapper" style="cursor: pointer;">
                 <div class="d-flex flex-column">
                     <div class="p-2">
-                        <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/895058478.png" />
+                        <a href="https://osausr.ntut.edu.tw/var/file/1/1001/img/3228/152311736.pdf" target="_blank"
+                            rel="noreferrer noopener">
+                            <img class="book-image"
+                                src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3225/531686235.png" />
+                        </a>
                     </div>
                     <div class="pl-2">
                         <div class="p-2 book-content-title font-weight-bold">成果專刊</div>
@@ -56,6 +63,11 @@
         margin-top: 30px;
         font-size: 28px;
         color: #707070;
+    }
+
+    .book-image {
+        -webkit-filter: drop-shadow(8px 8px 6px rgba(0, 0, 0, 0.7));
+        filter: drop-shadow(8px 8px 6px rgba(0, 0, 0, 0.7))
     }
 
     .book-content-date {
