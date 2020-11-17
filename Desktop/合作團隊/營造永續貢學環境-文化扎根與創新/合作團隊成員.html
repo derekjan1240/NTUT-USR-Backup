@@ -5,8 +5,8 @@
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
                 <div class="d-flex flex-column align-items-center" data-aos="flip-left"
                     onclick="showPartnerMemberModal(0)" style="cursor: pointer;">
-                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3335/404100551.png" alt="成員照片" width="174"
-                        height="174">
+                    <img class="member-avatar" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3378/546375757.png"
+                        alt="成員照片" width="174" height="174">
                     <p class="collaborative-partner-member-content-name">楊琇惠 教授</p>
                     <p class="collaborative-partner-member-content-department">單位：文化事業發展系</p>
                 </div>
@@ -56,12 +56,16 @@
         line-height: 1.35;
         letter-spacing: 1px;
     }
+
+    .member-avatar {
+        border-radius: 50%;
+    }
 </style>
 
 <script>
     const collaborativePartnerMember = [
         {
-            'avatar': 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3335/404100551.png',
+            'avatar': 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3378/546375757.png',
             'name': '楊琇惠 教授',
             'from': `國立台灣師範大學\n國文研究所博士`,
             'skill': '中國哲學、佛教哲學、中國文學史、兒童文學、華語文教學',

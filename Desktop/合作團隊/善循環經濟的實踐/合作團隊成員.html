@@ -5,8 +5,9 @@
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
                 <div class="d-flex flex-column align-items-center" data-aos="flip-left"
                     onclick="showPartnerMemberModal(0)" style="cursor: pointer;">
-                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/3.png" alt="成員照片" width="174"
-                        height="174">
+                    <img class="member-avatar"
+                        src="https://osausr.rpage.ntut.edu.tw/var/file/1/1001/img/3380/836721579.png" alt="成員照片"
+                        width="174" height="174">
                     <p class="collaborative-partner-member-content-name">范政揆 副教授</p>
                     <p class="collaborative-partner-member-content-department">單位：工業設計系</p>
                 </div>
@@ -14,8 +15,8 @@
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
                 <div class="d-flex flex-column align-items-center" data-aos="flip-left"
                     onclick="showPartnerMemberModal(1)" style="cursor: pointer;">
-                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/11.png" alt="成員照片" width="174"
-                        height="174">
+                    <img class="member-avatar" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/11.png"
+                        alt="成員照片" width="174" height="174">
                     <p class="collaborative-partner-member-content-name">陳慶暉 處長</p>
                     <p class="collaborative-partner-member-content-department">單位：光寶科技永續發展委員會</p>
                 </div>
@@ -23,8 +24,8 @@
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
                 <div class="d-flex flex-column align-items-center" data-aos="flip-left"
                     onclick="showPartnerMemberModal(2)" style="cursor: pointer;">
-                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/11.png" alt="成員照片" width="174"
-                        height="174">
+                    <img class="member-avatar" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/11.png"
+                        alt="成員照片" width="174" height="174">
                     <p class="collaborative-partner-member-content-name">劉大琦 助理教授</p>
                     <p class="collaborative-partner-member-content-department">單位：南臺科大創新產品設計系</p>
                 </div>
@@ -32,8 +33,8 @@
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
                 <div class="d-flex flex-column align-items-center" data-aos="flip-left"
                     onclick="showPartnerMemberModal(3)" style="cursor: pointer;">
-                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/11.png" alt="成員照片" width="174"
-                        height="174">
+                    <img class="member-avatar" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/11.png"
+                        alt="成員照片" width="174" height="174">
                     <p class="collaborative-partner-member-content-name">黃孟凡 專案講師</p>
                     <p class="collaborative-partner-member-content-department">單位：工業設計系</p>
                 </div>
@@ -41,8 +42,8 @@
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
                 <div class="d-flex flex-column align-items-center" data-aos="flip-left"
                     onclick="showPartnerMemberModal(4)" style="cursor: pointer;">
-                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/3.png" alt="成員照片" width="174"
-                        height="174">
+                    <img class="member-avatar" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/3.png"
+                        alt="成員照片" width="174" height="174">
                     <p class="collaborative-partner-member-content-name">朱莉蕎 專案講師</p>
                     <p class="collaborative-partner-member-content-department">單位：工業設計系</p>
                 </div>
@@ -50,8 +51,8 @@
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
                 <div class="d-flex flex-column align-items-center" data-aos="flip-left"
                     onclick="showPartnerMemberModal(5)" style="cursor: pointer;">
-                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3335/567669650.png" alt="成員照片" width="174"
-                        height="174">
+                    <img class="member-avatar" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3335/567669650.png"
+                        alt="成員照片" width="174" height="174">
                     <p class="collaborative-partner-member-content-name">黃志弘 院長</p>
                     <p class="collaborative-partner-member-content-department">單位：設計學院</p>
                 </div>
@@ -59,8 +60,8 @@
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
                 <div class="d-flex flex-column align-items-center" data-aos="flip-left"
                     onclick="showPartnerMemberModal(6)" style="cursor: pointer;">
-                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/3.png" alt="成員照片" width="174"
-                        height="174">
+                    <img class="member-avatar" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/3.png"
+                        alt="成員照片" width="174" height="174">
                     <p class="collaborative-partner-member-content-name">蘇昭瑾 研發長</p>
                     <p class="collaborative-partner-member-content-department">單位：國立臺北科技大學</p>
                 </div>
@@ -110,12 +111,16 @@
         line-height: 1.35;
         letter-spacing: 1px;
     }
+
+    .member-avatar {
+        border-radius: 50%;
+    }
 </style>
 
 <script>
     const collaborativePartnerMember = [
         {
-            'avatar': 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/3.png',
+            'avatar': 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3380/836721579.png',
             'name': '范政揆 副教授',
             'from': `國立臺北科技大學\n創新設計研究所碩士`,
             'skill': '創新設計、設計策略、永續設計、醫療與健康產品開發',

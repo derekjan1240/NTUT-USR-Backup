@@ -5,8 +5,8 @@
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
                 <div class="d-flex flex-column align-items-center" data-aos="flip-left"
                     onclick="showPartnerMemberModal(0)" style="cursor: pointer;">
-                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/3.png" alt="成員照片" width="174"
-                        height="174">
+                    <img class="member-avatar" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3377/758861560.png"
+                        alt="成員照片" width="174" height="174">
                     <p class="collaborative-partner-member-content-name">王怡惠 副教授</p>
                     <p class="collaborative-partner-member-content-department">單位： 文化事業發展系</p>
                 </div>
@@ -56,12 +56,16 @@
         line-height: 1.35;
         letter-spacing: 1px;
     }
+
+    .member-avatar {
+        border-radius: 50%;
+    }
 </style>
 
 <script>
     const collaborativePartnerMember = [
         {
-            'avatar': 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/3.png',
+            'avatar': 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3377/758861560.png',
             'name': '王怡惠 副教授',
             'from': `澳洲雪梨大學\n視覺藝術博士`,
             'skill': '當代陶藝論述、當代工藝產業研究、陶瓷設計與製作、工藝材質與設計應用',

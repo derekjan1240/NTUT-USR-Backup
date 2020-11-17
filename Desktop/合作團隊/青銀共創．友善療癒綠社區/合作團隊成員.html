@@ -5,8 +5,8 @@
             <div class="collaborative-partner-member-content col-md-6 col-xl-3">
                 <div class="d-flex flex-column align-items-center" data-aos="flip-left"
                     onclick="showPartnerMemberModal(0)" style="cursor: pointer;">
-                    <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/3.png" alt="成員照片" width="174"
-                        height="174">
+                    <img class="member-avatar" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3379/367642848.png"
+                        alt="成員照片" width="174" height="174">
                     <p class="collaborative-partner-member-content-name">蔡淑瑩 教授</p>
                     <p class="collaborative-partner-member-content-department">單位：建築系</p>
                 </div>
@@ -56,12 +56,16 @@
         line-height: 1.35;
         letter-spacing: 1px;
     }
+
+    .member-avatar {
+        border-radius: 50%;
+    }
 </style>
 
 <script>
     const collaborativePartnerMember = [
         {
-            'avatar': 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3371/3.png',
+            'avatar': 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3379/367642848.png',
             'name': '蔡淑瑩 教授',
             'from': `國立台灣大學\n建築與城鄉研究所博士`,
             'skill': '建築計畫與設計、環境藝術、人與環境關係、老年建築學',
