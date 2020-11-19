@@ -7,13 +7,29 @@
         display: flex;
         border-bottom: 1px solid black;
         border-top: 1px solid black;
-        margin-left: 165px;
-        margin-right: 165px;
+        margin: 0;
         padding: 55px 0;
     }
 
+    @media (min-width: 767px) {
+        .module-special {
+            margin: 0 65px;
+        }
+    }
+
+    @media (min-width: 1366px) {
+        .module-special {
+            margin: 0 165px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .module-special.md_style1 .d-title .d-txt .mtitle i {
+            display: none;
+        }
+    }
+
     .mtitle>a {
-        /* white-space: nowrap; */
         overflow: hidden;
         text-overflow: ellipsis;
         font-size: 25px;
@@ -45,5 +61,9 @@
     /* 使用自製按鈕取代原本按鈕 */
     .more>a {
         display: none;
+    }
+
+    .module-special.md_style1 .d-title .d-txt .mtitle a {
+        white-space: normal;
     }
 </style>
