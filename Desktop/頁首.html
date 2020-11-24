@@ -26,6 +26,15 @@
         width: 143px;
     }
 
+    .navbar {
+        border: 0;
+    }
+
+    .dropdown-item.active,
+    .dropdown-item:active {
+        background-color: #4998b2 !important;
+    }
+
     @media (min-width: 1200px) {
         .header .navbar {
             height: 120px;
@@ -38,12 +47,7 @@
         .navbar-nav .open #dropdown-menu {
             position: relative;
             top: 0%;
-            left: 130px;
             border-bottom: none !important;
-        }
-
-        #officeIntroList>li {
-            left: 130px;
         }
 
         .collapse:not(.show) {
@@ -59,17 +63,22 @@
             position: relative;
             width: 110px;
         }
+
+        #officeIntroList>li {
+            margin: 5px 0;
+            width: 100vw;
+        }
     }
 
     @media(max-width: 767px) {
+        #officeIntroList>li {
+            margin: 0;
+            width: 100vw;
+        }
+
         #officeIntroList>li>a:after {
-            position: relative;
-            left: 100px;
-            content: "";
-            display: block;
-            width: 0;
-            bottom: 27px;
-            background: none;
+            display: inline-block;
+            margin-left: .255em;
         }
 
         #officeIntroList>li>a:before {
@@ -104,7 +113,6 @@
         .navbar-nav .open #dropdown-menu {
             position: relative;
             top: 0%;
-            left: 130px;
             float: none;
             width: auto;
             margin-top: 0;
@@ -189,8 +197,8 @@
 
 <div class="fixed-top">
     <div class="container-fluid d-flex align-items-center justify-content-center px-0 mx-0">
-        <div class="row px-3" style="background: #4998b2; min-height:120px; width: 100vw;">
-            <nav class="navbar navbar-expand-xl navbar-dark col-xl-12">
+        <div class="row" style="background: #4998b2; min-height:120px; width: 100vw;">
+            <nav class="navbar navbar-expand-xl navbar-dark col-xl-12 p-0">
                 <a class="navbar-brand" href="https://osausr.ntut.edu.tw/">
                     <img alt="社會責任實踐計畫" class="d-inline-block align-top" height="30" id="nav-img" loading="lazy"
                         src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3332/1.png" />
@@ -205,12 +213,12 @@
                 </div>
 
                 <button aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"
-                    class="navbar-toggler bg-secondary" data-target="#navbarNavDropdown" data-toggle="collapse"
+                    class="navbar-toggler bg-secondary mr-5" data-target="#navbarNavDropdown" data-toggle="collapse"
                     type="button"><span class="navbar-toggler-icon"></span></button>
 
 
                 <div class="collapse navbar-collapse navbar-collapse-center justify-content-end" id="navbarNavDropdown">
-                    <ul class="navbar-nav navbar-center pt-5 pt-xl-0" id="officeIntroList">
+                    <ul class="navbar-nav navbar-center pt-5 pt-xl-0 mr-5" id="officeIntroList">
                         <li class="nav-item dropdown">
                             <a class="nav-link text-white dropdown-toggle" data-toggle="dropdown" role="button"
                                 aria-haspopup="true" aria-expanded="false" id="">關於我們</a>
