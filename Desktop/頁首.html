@@ -21,7 +21,7 @@
     }
 
     #nav-img {
-        top: -20px;
+        top: -25px;
         position: relative;
         width: 143px;
     }
@@ -41,6 +41,10 @@
             z-index: 9;
             clear: both;
         }
+
+        .navbar-nav {
+            margin-right: 100px;
+        }
     }
 
     @media (min-width: 768px) and (max-width: 1200px) {
@@ -59,7 +63,7 @@
         }
 
         #nav-img {
-            top: -10px;
+            top: -15px;
             position: relative;
             width: 110px;
         }
@@ -119,8 +123,6 @@
             background-color: white;
             border: 0;
             -webkit-box-shadow: none;
-
-            /* box-shadow: none; */
         }
 
         .topnav li a:after,
@@ -130,17 +132,12 @@
             content: "";
             display: block;
             width: 0;
-            /* top: 0; */
             bottom: 27px;
-            /* right: 0; */
             background: none;
         }
 
-        .topnav li a:after,
-        .navbar-nav>li>a:before {}
-
         #nav-img {
-            top: -10px;
+            top: -15px;
             position: relative;
             width: 120px;
         }
@@ -199,7 +196,7 @@
     <div class="container-fluid d-flex align-items-center justify-content-center px-0 mx-0">
         <div class="row" style="background: #4998b2; min-height:120px; width: 100vw;">
             <nav class="navbar navbar-expand-xl navbar-dark col-xl-12 p-0">
-                <a class="navbar-brand" href="https://osausr.ntut.edu.tw/">
+                <a class="navbar-brand mx-xl-5" href="https://osausr.ntut.edu.tw/">
                     <img alt="社會責任實踐計畫" class="d-inline-block align-top" height="30" id="nav-img" loading="lazy"
                         src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3332/1.png" />
                 </a>
@@ -218,7 +215,7 @@
 
 
                 <div class="collapse navbar-collapse navbar-collapse-center justify-content-end" id="navbarNavDropdown">
-                    <ul class="navbar-nav navbar-center pt-5 pt-xl-0 mr-5" id="officeIntroList">
+                    <ul class="navbar-nav navbar-center pt-5 pt-xl-0" id="officeIntroList">
                         <li class="nav-item dropdown">
                             <a class="nav-link text-white dropdown-toggle" data-toggle="dropdown" role="button"
                                 aria-haspopup="true" aria-expanded="false" id="">關於我們</a>
