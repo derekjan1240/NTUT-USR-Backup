@@ -1,8 +1,29 @@
+<script>
+    $(function () {
+        if (downloadData.length) {
+            for (let i = 0; i < downloadData.length; i++) {
+                const tr = $('#template').find('.tr-template').clone();
+                const icon = downloadData[i].fileType ? $('#template').find(`.${downloadData[i].fileType}-template`).clone() : null;
+                tr.find('.date').text(downloadData[i].date)
+                tr.find('.title').text(downloadData[i].title)
+                if (icon) {
+                    downloadData[i].fileLink ? $(icon).attr("href", downloadData[i].fileLink) : null;
+                    tr.find('.link').append(icon);
+                }
+                $('tbody').append(tr);
+            }
+        }
+    });
+</script>
 <style>
     table {
         font-family: "SegoeUI";
         font-size: 25px;
         line-height: 1.32;
+    }
+
+    th {
+        color: #707070;
     }
 
     td {
@@ -22,69 +43,65 @@
         font-family: "SegoeUI";
         font-size: 45px;
         color: #4998b2;
+        margin-top: 118px;
         margin-bottom: 60px;
     }
+
+    #planetIcon {
+        position: absolute;
+        left: 70%;
+        top: 15%;
+        z-index: -1;
+    }
+
+    #downloadTable {
+        max-width: 1050px;
+        padding: 100px 0;
+    }
 </style>
-<div id="pageBackground"></div>
-<div class="container my-5 p-5" style="min-height: 80vh; min-width: 75vw;">
+<div id="pageBackground" data-aos="zoom-in"></div>
+<div class="container" style="min-height: 80vh; min-width: 75vw;">
+    <img id="planetIcon" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3364/193985670.png" alt="星球"
+        data-aos="zoom-in" data-aos-offset="0" data-aos-delay="300" data-aos-duration="500">
     <div class="row">
-        <h1 id="fileDownloadTitle" class="py-5 text-center w-100">檔案下載 - 校內</h1>
+        <h1 id="fileDownloadTitle" class="text-center w-100 animate__animated animate__jello">檔案下載 - 校內</h1>
     </div>
-    <div class="row table-responsive m-0">
+    <div id="downloadTable" class="row table-responsive m-0">
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col" class="text-nowrap">日期</th>
                     <th scope="col" class="text-nowrap">標題</th>
-                    <th scope="col" colspan="2" class="text-nowrap">載點</th>
+                    <th scope="col" class="text-nowrap">載點</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td class="text-nowrap">2020-11-12</td>
-                    <td>110年度USR種子計畫徵件辦法</td>
-                    <td>
-                        <a href="https://osausr.rpage.ntut.edu.tw/var/file/1/1001/img/3374/362298183.pdf"
-                            class="text-danger text-decoration-none" target="_blank">
-                            <i class="fas fa-file-pdf fa-lg"></i>
-                        </a>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td class="text-nowrap">2020-11-12</td>
-                    <td>110年度USR種子計畫徵件辦法_附件_計劃書格式</td>
-                    <td>
-                        <a href="https://osausr.ntut.edu.tw/var/file/1/1001/img/3374/881218344.docx"
-                            class="text-primary text-decoration-none" target="_blank">
-                            <i class="fas fa-file-word fa-lg"></i>
-                        </a>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td class="text-nowrap">2020-11-12</td>
-                    <td>109年北科大USR Hub期中報告【USR Hub 期中報告_計畫名稱】格式</td>
-                    <td>
-                        <a href="https://osausr.ntut.edu.tw/var/file/1/1001/img/3374/628391463.docx"
-                            class="text-primary text-decoration-none" target="_blank">
-                            <i class="fas fa-file-word fa-lg"></i>
-                        </a>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td class="text-nowrap">2020-11-12</td>
-                    <td>109年北科大USR Hub期中報告【USR計畫資料收集表單_計畫名稱】格式</td>
-                    <td>
-                        <a href="https://osausr.ntut.edu.tw/var/file/1/1001/img/3374/857162777.xlsx"
-                            class="text-success text-decoration-none" target="_blank">
-                            <i class="fas fa-file-excel fa-lg"></i>
-                        </a>
-                    </td>
-                    <td></td>
-                </tr>
-            </tbody>
+            <tbody></tbody>
         </table>
     </div>
+</div>
+<div id="template" class="d-none">
+    <table class="table">
+        <thead>
+            <tr class="tr-template">
+                <td class="date text-nowrap"></td>
+                <td class="title"></td>
+                <td class="link"></td>
+            </tr>
+        </thead>
+    </table>
+    <a class="PDF-template text-danger text-decoration-none" target="_blank">
+        <i class="fas fa-file-pdf fa-lg"></i>
+    </a>
+    <a class="WORD-template text-primary text-decoration-none" target="_blank">
+        <i class="fas fa-file-word fa-lg"></i>
+    </a>
+    <a class="EXCEL-template text-success text-decoration-none" target="_blank">
+        <i class="fas fa-file-excel fa-lg"></i>
+    </a>
+    <a class="PPT-template text-decoration-none" target="_blank">
+        <i class="fa fa-file-powerpoint fa-lg" style="color:#D04423;"></i>
+    </a>
+    <a class="FILE-template text-info text-decoration-none" target="_blank">
+        <i class="fas fa-file-alt fa-lg"></i>
+    </a>
 </div>
