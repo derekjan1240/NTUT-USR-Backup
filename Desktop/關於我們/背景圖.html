@@ -1,8 +1,7 @@
-<section>
-    <div class="about-us-background"></div>
-    <img class="planets-background" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3335/574715321.png"
-        data-aos="zoom-in" data-aos-offset="0" data-aos-delay="300" data-aos-duration="500">
-</section>
+<div class="about-us-background"></div>
+<img class="planets-background" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3335/574715321.png"
+    data-aos="zoom-in" data-aos-offset="0" data-aos-delay="300" data-aos-duration="500">
+
 <style>
     .about-us-background {
         position: fixed;
@@ -23,7 +22,8 @@
     window.onscroll = function () { adjustBackgroundHeight() };
 
     function adjustBackgroundHeight() {
-        if (document.documentElement.scrollTop > 1400) {
+        let limit = $(window).width() > 767 ? 1500 : 2300;
+        if (document.documentElement.scrollTop > limit) {
             document.querySelector('.about-us-background').style.height = 0;
             document.querySelector('.planets-background').style.display = 'none';
         } else {
