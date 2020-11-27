@@ -103,6 +103,7 @@
             $(el).find('.collaborative-partner-highlight-content-title').text(collaborativePartnerHighlights[i].title);
             $(el).find('.ellipsis-line-5').text(collaborativePartnerHighlights[i].intro);
             $(el).find('.collaborative-partner-highlight-content-image').css('background-image', `url(${collaborativePartnerHighlights[i].image})`);
+            $(el).find('.collaborative-partner-highlight-content-button-link').attr('href', collaborativePartnerHighlights[i].link);
             // 新增入 UI
             $('#collaborativePartnerHighlightContentsWrapper').append(el);
         }

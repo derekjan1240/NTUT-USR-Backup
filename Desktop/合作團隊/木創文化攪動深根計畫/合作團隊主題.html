@@ -3,12 +3,13 @@
         <h1 id="collaborativePartnerBackgroundContentSubTitle"></h1>
         <hr id="collaborativePartnerBackgroundContentHr">
         <h1 id="collaborativePartnerBackgroundContentTitle" class="animate__animated animate__jello"></h1>
-        <span id="collaborativePartnerBackgroundContentButton" class="text-center">計畫網站</span>
+        <a id="collaborativePartnerBackgroundContentButtonLink" class="text-decoration-none">
+            <span id="collaborativePartnerBackgroundContentButton" class="text-center">計畫網站</span>
+        </a>
     </div>
 </div>
 <style type="text/css">
     #collaborativePartnerBackground {
-        background: url(https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/438398622.png);
         background-size: cover;
         background-repeat: no-repeat;
         width: 100vw;
@@ -57,10 +58,16 @@
         color: black;
         background: #fff;
     }
+
+    #collaborativePartnerBackgroundContentButtonLink {
+        color: inherit;
+    }
 </style>
 <script>
     $(function () {
+        $('#collaborativePartnerBackground').css('background-image', `url(${collaborativePartnerMain.image})`);
         $('#collaborativePartnerBackgroundContentContainer').find('#collaborativePartnerBackgroundContentTitle').text(collaborativePartnerMain.title || '待新增主題');
         $('#collaborativePartnerBackgroundContentContainer').find('#collaborativePartnerBackgroundContentSubTitle').text(collaborativePartnerMain.year || '待新增年度');
+        $('#collaborativePartnerBackgroundContentButtonLink').attr('href', collaborativePartnerMain.link);
     });
 </script>
