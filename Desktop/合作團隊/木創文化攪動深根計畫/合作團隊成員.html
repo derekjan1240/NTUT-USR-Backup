@@ -1,7 +1,7 @@
 <div class="collaborative-partner-member-container">
     <h1 class="w-100 text-center collaborative-partner-member-title">團 隊 成 員</h1>
     <div id="collaborativePartnerMemberContentContainer" class="w-100">
-        <div id="collaborativePartnerMemberContentWrapper" class="row text-center justify-content-start"></div>
+        <div id="collaborativePartnerMemberContentWrapper" class="row text-center justify-content-around"></div>
     </div>
 </div>
 
@@ -117,7 +117,7 @@
             // 設定 團隊成員 內容 & 事件
             $(el).find('.member-avatar').attr("src", collaborativePartnerMember[i].avatar);
             $(el).find('.collaborative-partner-member-content-name').text(collaborativePartnerMember[i].name);
-            $(el).find('.collaborative-partner-member-content-department').text(`單位： ${collaborativePartnerMember[i].organization}`);
+            $(el).find('.collaborative-partner-member-content-department').text(`${collaborativePartnerMember[i].organization}`);
             $(el).click(function () { showPartnerMemberModal(i) });
             // 新增入 UI
             $('#collaborativePartnerMemberContentWrapper').append(el);
