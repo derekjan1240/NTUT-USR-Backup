@@ -1,53 +1,8 @@
-<div class="collaborative-partner-feedbacks-container d-flex flex-column align-items-center">
+<div id="collaborative-partner-feedbacks-container" class="d-flex flex-column align-items-center">
     <h1 class="collaborative-partner-feedbacks-title w-100 text-center">心 得 回 饋</h1>
-
-    <div class="collaborative-partner-feedback-container row" data-aos="fade-right" data-aos-offset="300"
-        data-aos-easing="ease-in-sine">
-        <span class="col-12 col-xl-2">
-            <div class="d-flex flex-column align-items-center">
-                <img alt="心得作者照片" height="174" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/675109942.png"
-                    width="174" />
-                <span class="collaborative-partner-feedback-author">同學 A</span>
-            </div>
-        </span>
-        <div class="collaborative-partner-feedback col-12 col-xl-8 mt-3 mt-xl-0">
-            <div class="left-triangle d-none d-xl-block"></div>
-            <p class="collaborative-partner-feedback-content" onclick="showFeedbackModal(0)" style="cursor: pointer;">
-                心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補。
-            </p>
-        </div>
-        <div class="col-xl-2 d-none d-xl-block"></div>
-    </div>
-
-    <div class="collaborative-partner-feedback-container row" data-aos="fade-left" data-aos-offset="300"
-        data-aos-easing="ease-in-sine">
-        <div class="col-xl-2 d-none d-xl-block"></div>
-        <span class="col-12 col-xl-2 d-block d-xl-none">
-            <div class="d-flex flex-column align-items-center">
-                <img alt="心得作者照片" height="174" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/411645215.png"
-                    width="174" />
-                <span class="collaborative-partner-feedback-author">同學 B</span>
-            </div>
-        </span>
-        <div class="collaborative-partner-feedback col-12 col-xl-8 mt-3 mt-xl-0">
-            <div class="right-triangle d-none d-xl-block"></div>
-            <p class="collaborative-partner-feedback-content" onclick="showFeedbackModal(1)" style="cursor: pointer;">
-                心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補心得待補。
-            </p>
-        </div>
-        <span class="col-12 col-xl-2 d-none d-xl-block">
-            <div class="d-flex flex-column align-items-center">
-                <img alt="心得作者照片" height="174" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/411645215.png"
-                    width="174" />
-                <span class="collaborative-partner-feedback-author">同學 B</span>
-            </div>
-        </span>
-    </div>
 </div>
-
-
 <style>
-    .collaborative-partner-feedbacks-container {
+    #collaborative-partner-feedbacks-container {
         padding: 94px 0 172px;
         position: relative;
         background: #efefef;
@@ -72,6 +27,7 @@
         color: #707070;
         background: #fff;
         border-radius: 47px;
+        cursor: pointer;
     }
 
     .collaborative-partner-feedback-author {
@@ -102,30 +58,57 @@
         border-color: transparent transparent transparent #ffffff;
     }
 </style>
+<style>
+    /* 跳出視窗 CSS */
+    #stuentAvatar {
+        max-width: 174px;
+        border-radius: 50%;
+    }
 
+    #studentName {
+        font-size: 30px;
+        font-family: 'SegoeUI';
+        color: #707070;
+    }
+
+    #studentFeedback {
+        max-height: 65vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 25px;
+        font-family: 'SegoeUI';
+        color: #707070;
+        letter-spacing: 3px;
+        line-height: 1.6;
+        white-space: pre-line;
+    }
+</style>
 <script>
-    const collaborativePartnerFeedbacks = [
-        {
-            'avatar': 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/675109942.png',
-            'name': '同學 A',
-            'content': '心得待補。',
-        },
-        {
-            'avatar': 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/411645215.png',
-            'name': '同學 B',
-            'content': '心得待補。',
+    $(function () {
+        createFeedbackContainer();
+    });
+
+    function createFeedbackContainer() {
+        if (!collaborativePartnerFeedbacks.length) { return }
+
+        for (let i = 0; i < collaborativePartnerFeedbacks.length; i++) {
+            // 複製 心得回饋 模板
+            const el = (i % 2 === 0) ? $('#template').find('.even-template').clone() : $('#template').find('.odd-template').clone();
+            // 設定 心得回饋 內容 & 事件
+            $(el).find('.collaborative-partner-feedback-author').text(collaborativePartnerFeedbacks[i].name);
+            $(el).find('.collaborative-partner-feedback-content').text(collaborativePartnerFeedbacks[i].content);
+            $(el).find('.collaborative-partner-feedback-content').click(function () { showFeedbackModal(i) });
+            $(el).find('.student-avatar').attr("src", collaborativePartnerFeedbacks[i].avatar);
+            // 新增入 UI
+            $('#collaborative-partner-feedbacks-container').append(el);
         }
-    ];
+    }
 
     function showFeedbackModal(index) {
-        if (!collaborativePartnerFeedbacks[index]) {
-            return;
-        }
-
+        if (!collaborativePartnerFeedbacks[index]) { return }
         $('#collaborative-partner-feedback-template').find('#stuentAvatar').attr("src", collaborativePartnerFeedbacks[index].avatar);
         $('#collaborative-partner-feedback-template').find('#studentName').text(collaborativePartnerFeedbacks[index].name);
         $('#collaborative-partner-feedback-template').find('#studentFeedback').text(collaborativePartnerFeedbacks[index].content);
-
 
         Swal.fire({
             title: '',

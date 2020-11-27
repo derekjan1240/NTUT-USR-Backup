@@ -1,22 +1,9 @@
-<div class="collaborative-partner-intro-container">
-    <p class="collaborative-partner-intro-content" data-aos="zoom-in" data-aos="zoom-in" data-aos-easing="ease-in-sine">
-        本案以跨代交流與跨域整合為計畫特色，貫穿與執行計畫。
-
-        跨代交流：木創文化深根為兩大核心宗旨之一，透過老、中、青、幼四代的研發、課程、活動規劃，讓木創故事、文化、技術跨代深根。
-
-        跨域整合：以木創產業精緻化為目標，跨域整合產業技術與學術知識、工業設計與商業設計、商業與文教，讓木產業不只有產品，透過設計美學精緻化、透過品牌生活化、透過教育深根文化。
-
-        本案根據核心宗旨、四大目標與六項計畫指標(建立文化認同、促進文化傳承、觸發研發能量、連結品牌通路、建立創新思維、提升生活美學素養)，透過跨代交流、跨域整合，設定關鍵績效指標如下：
-        第一年(促進文化認同與傳承)：建立文化傳承文本，透過教育、座談與講座，落實跨代雙向溝通，促發木創文化意識。
-        第二、三年(在地木創產業經濟體發酵/普及全民設計與生活美學素養)：透過跨域整合、工作坊、體驗活動，提升研發能量與開創木創品牌通路，並建立創新思維，推動生活美學運動。
+<div id="collaborativePartnerIntroContainer">
+    <p id="collaborativePartnerIntroContent" data-aos="zoom-in" data-aos="zoom-in" data-aos-easing="ease-in-sine">
     </p>
 </div>
 <style type="text/css">
-    .collaborative-partner-intro-container {
-        font-family: 'SegoeUI';
-    }
-
-    .collaborative-partner-intro-content {
+    #collaborativePartnerIntroContent {
         padding: 50px 50px;
         font-size: 20px;
         line-height: 1.6;
@@ -24,16 +11,21 @@
     }
 
     @media (min-width: 767px) {
-        .collaborative-partner-highlight-content-container {
+        #collaborativePartnerIntroContent {
             padding: 100px 100px;
             font-size: 25px;
         }
     }
 
     @media (min-width: 1366px) {
-        .collaborative-partner-intro-content {
+        #collaborativePartnerIntroContent {
             padding: 200px 250px;
             font-size: 25px;
         }
     }
 </style>
+<script>
+    $(function () {
+        $('#collaborativePartnerIntroContainer').find('#collaborativePartnerIntroContent').text(collaborativePartnerIntro || '待新增簡介');
+    });
+</script>

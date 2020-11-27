@@ -1,19 +1,19 @@
-<div class="sdg-target-container">
-    <h1 class="w-100 text-center sdg-target-title">SDGs 關聯目標</h1>
-
-    <div class="sdg-container w-100">
-        <div class="d-flex justify-content-center">
-            <img alt="SDGs" class="sdg-icon" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3373/4.png"
-                data-aos="flip-up" />
-            <img alt="SDGs" class="sdg-icon" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3373/9.png"
-                data-aos="flip-up" data-aos-delay="300" />
-            <img alt="SDGs" class="sdg-icon" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3373/11.png"
-                data-aos="flip-up" data-aos-delay="600" />
-        </div>
+<div id="sdgTargetContainer">
+    <h1 id="sdgTargetTitle" class="w-100 text-center">SDGs 關聯目標</h1>
+    <div id="sdgContainer" class="w-100">
+        <div id="sdgWrapper" class="d-flex justify-content-center"></div>
     </div>
 </div>
 <style type="text/css">
-    .sdg-target-title {
+    #sdgTargetContainer {
+        position: relative;
+        background: url('https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/790393737.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 490px;
+    }
+
+    #sdgTargetTitle {
         position: absolute;
         top: 85px;
         color: #fff;
@@ -22,7 +22,7 @@
         letter-spacing: 2.25px;
     }
 
-    .sdg-container {
+    #sdgContainer {
         position: absolute;
         top: 208px;
     }
@@ -37,12 +37,18 @@
             width: 120px;
         }
     }
-
-    .sdg-target-container {
-        position: relative;
-        background: url('https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/790393737.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 490px;
-    }
 </style>
+<script>
+    $(function () {
+        setSDGsImages();
+    });
+
+    function setSDGsImages() {
+        if (!collaborativePartnerSDGs.length) { return }
+        for (let i = 0; i < collaborativePartnerSDGs.length; i++) {
+            const image = $('#template').find('.sdg-icon-template').clone();
+            image.attr('src', `https://osausr.ntut.edu.tw/var/file/1/1001/img/3373/${collaborativePartnerSDGs[i]}.png`);
+            $('#sdgWrapper').append(image);
+        }
+    }
+</script>

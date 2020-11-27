@@ -1,0 +1,109 @@
+<!-- 複製模板 -->
+<div id="template" class="d-none">
+    <!-- 團隊成員 -->
+    <div class="collaborative-partner-member-content col-md-6 col-xl-3">
+        <div class="d-flex flex-column align-items-center" data-aos="flip-left" style="cursor: pointer;">
+            <img class="member-avatar" alt="成員照片" width="174" height="174">
+            <p class="collaborative-partner-member-content-name"></p>
+            <p class="collaborative-partner-member-content-department"></p>
+        </div>
+    </div>
+
+    <!-- SDGs 關聯目標 -->
+    <img alt="SDGs" class="sdg-icon sdg-icon-template" data-aos="flip-up" />
+
+    <!-- 亮點成果 -->
+    <div class="collaborative-partner-highlight-content-container row" data-aos="flip-left" data-aos-duration="1000">
+        <div class="col-12 col-lg-5 d-flex justify-content-center collaborative-partner-highlight-content-image">
+        </div>
+        <div class="col-12 col-lg-7 mt-5 mt-lg-0">
+            <div class="d-flex flex-column bd-highlight pl-3 mb-3">
+                <div class="collaborative-partner-highlight-content-title"></div>
+
+                <div class="collaborative-partner-highlight-content">
+                    <p class="ellipsis-line-5"></p>
+                </div>
+
+                <div
+                    class="collaborative-partner-highlight-content-button d-flex justify-content-center align-items-center">
+                    <span>課程介紹</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 心得回饋 -->
+    <div class="collaborative-partner-feedback-container row even-template" data-aos="fade-right" data-aos-offset="300"
+        data-aos-easing="ease-in-sine">
+        <span class="col-12 col-xl-2">
+            <div class="d-flex flex-column align-items-center">
+                <img class="student-avatar" alt="心得作者照片" height="174" width="174" />
+                <span class="collaborative-partner-feedback-author"></span>
+            </div>
+        </span>
+        <div class="collaborative-partner-feedback col-12 col-xl-8 mt-3 mt-xl-0">
+            <div class="left-triangle d-none d-xl-block"></div>
+            <p class="collaborative-partner-feedback-content"></p>
+        </div>
+        <div class="col-xl-2 d-none d-xl-block"></div>
+    </div>
+    <div class="collaborative-partner-feedback-container row odd-template" data-aos="fade-left" data-aos-offset="300"
+        data-aos-easing="ease-in-sine">
+        <div class="col-xl-2 d-none d-xl-block"></div>
+        <span class="col-12 col-xl-2 d-block d-xl-none">
+            <div class="d-flex flex-column align-items-center">
+                <img class="student-avatar" alt="心得作者照片" height="174" width="174" />
+                <span class="collaborative-partner-feedback-author"></span>
+            </div>
+        </span>
+        <div class="collaborative-partner-feedback col-12 col-xl-8 mt-3 mt-xl-0">
+            <div class="right-triangle d-none d-xl-block"></div>
+            <p class="collaborative-partner-feedback-content"></p>
+        </div>
+        <span class="col-12 col-xl-2 d-none d-xl-block">
+            <div class="d-flex flex-column align-items-center">
+                <img class="student-avatar" alt="心得作者照片" height="174" width="174" />
+                <span class="collaborative-partner-feedback-author"></span>
+            </div>
+        </span>
+    </div>
+
+    <!-- 成員 跳出視窗 -->
+    <div id="collaborative-partner-member-template">
+        <div class="row p-0 p-md-5">
+            <div class="col-md-3">
+                <div id="template-member-info-warpper" class="d-flex flex-column justify-content-center">
+                    <div id="avatarWrapper" class="w-100 text-center">
+                        <img id="personAvatar" class="w-100" alt="成員頭像">
+                    </div>
+                    <p id="personName" class="text-center my-5"></p>
+                    <p id="personFrom" class="text-md-left"></p>
+                </div>
+            </div>
+            <div class="col-md-9 mt-5 mt-lg-0">
+                <div id="template-content-warpper" class="d-flex flex-column justify-content-center">
+                    <h1 class="font-weight-bold text-left">學術研究專長：</h1>
+                    <p id="personSkill" class="text-left p-0 mt-md-5"></p>
+                    <p id="personIntro" class="text-left p-0 mt-md-5"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 學生 跳出視窗 -->
+    <div id="collaborative-partner-feedback-template">
+        <div class="row p-0 p-md-5">
+            <div class="col-md-3">
+                <div class="d-flex flex-column justify-content-center">
+                    <div id="avatarWrapper" class="w-100 text-center">
+                        <img id="stuentAvatar" class="w-100" alt="學生頭像">
+                    </div>
+                    <p id="studentName" class="mt-3"></p>
+                </div>
+            </div>
+            <div class="col-md-9 mt-3 mt-lg-0">
+                <p id="studentFeedback" class="text-left p-0 mt-md-5"></p>
+            </div>
+        </div>
+    </div>
+</div>

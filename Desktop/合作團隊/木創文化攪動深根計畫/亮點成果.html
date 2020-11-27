@@ -1,57 +1,8 @@
 <div class="collaborative-partner-highlight-container">
     <h1 class="w-100 text-center collaborative-partner-highlight-title">亮點成果</h1>
 
-    <div class="collaborative-partner-highlight-contents-container w-100">
-        <div class="d-flex flex-column bd-highlight pl-3 mb-3">
-            <div class="collaborative-partner-highlight-content-container row" data-aos="flip-left"
-                data-aos-duration="1000">
-                <div class="col-12 col-lg-5 d-flex justify-content-center collaborative-partner-highlight-content-image"
-                    style="background: url(https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/701482618.png);">
-                </div>
-
-                <div class="col-12 col-lg-7 mt-5 mt-lg-0">
-                    <div class="d-flex flex-column bd-highlight pl-3 mb-3">
-                        <div class="collaborative-partner-highlight-content-title">
-                            <p>原住民安居構築與綠色樂業推動計畫</p>
-                        </div>
-
-                        <div class="collaborative-partner-highlight-content">
-                            <p class="ellipsis-line-5">在新竹縣尖石鄉海拔 1200 公尺至1600公尺森林山區,後山的農 村部落裡,維持著非常
-                                良好景觀及自然資源族人多為泰雅族群從事 農耕生活,致力於推廣內涵泰雅智慧的自然友善農業。但因為過去 社群組織停頓、山地理、交通運輸及資源不足等限制,產業的維持
-                                及生活文化受到各種現實考驗</p>
-                        </div>
-
-                        <div
-                            class="collaborative-partner-highlight-content-button d-flex justify-content-center align-items-center">
-                            <span>課程介紹</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="collaborative-partner-highlight-content-container row" data-aos="flip-left"
-                data-aos-duration="1000">
-                <div class="col-12 col-lg-5 d-flex justify-content-center collaborative-partner-highlight-content-image"
-                    style="background: url(https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/337140513.png);">
-                </div>
-                <div class="col-12 col-lg-7 mt-5 mt-lg-0">
-                    <div class="d-flex flex-column bd-highlight pl-3 mb-3">
-                        <div class="collaborative-partner-highlight-content-title">
-                            <p>原住民安居構築與綠色樂業推動計畫</p>
-                        </div>
-
-                        <div class="collaborative-partner-highlight-content">
-                            <p class="ellipsis-line-5">在新竹縣尖石鄉海拔 1200 公尺至1600公尺森林山區,後山的農 村部落裡,維持著非常
-                                良好景觀及自然資源族人多為泰雅族群從事 農耕生活,致力於推廣內涵泰雅智慧的自然友善農業。但因為過去 社群組織停頓、山地理、交通運輸及資源不足等限制,產業的維持
-                                及生活文化受到各種現實考驗</p>
-                        </div>
-
-                        <div
-                            class="collaborative-partner-highlight-content-button d-flex justify-content-center align-items-center">
-                            <span>課程介紹</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div id="collaborativePartnerHighlightContentsContainer" class="w-100">
+        <div id="collaborativePartnerHighlightContentsWrapper" class="d-flex flex-column bd-highlight pl-3 mb-3"></div>
     </div>
 </div>
 <style type="text/css">
@@ -67,7 +18,7 @@
         line-height: 1.33;
     }
 
-    .collaborative-partner-highlight-contents-container {
+    .collaborativePartnerHighlightContentsContainer {
         margin-bottom: 191px;
     }
 
@@ -137,4 +88,23 @@
         }
     }
 </style>
-</div>
+<script>
+    $(function () {
+        createHighlightContentContainer();
+    });
+
+    function createHighlightContentContainer() {
+        if (!collaborativePartnerHighlights.length) { return }
+
+        for (let i = 0; i < collaborativePartnerHighlights.length; i++) {
+            // 複製 亮點成果 模板
+            const el = $('#template').find('.collaborative-partner-highlight-content-container').clone();
+            // 設定 心得回饋 內容 & 事件
+            $(el).find('.collaborative-partner-highlight-content-title').text(collaborativePartnerHighlights[i].title);
+            $(el).find('.ellipsis-line-5').text(collaborativePartnerHighlights[i].intro);
+            $(el).find('.collaborative-partner-highlight-content-image').css('background-image', `url(${collaborativePartnerHighlights[i].image})`);
+            // 新增入 UI
+            $('#collaborativePartnerHighlightContentsWrapper').append(el);
+        }
+    }
+</script>
