@@ -57,6 +57,10 @@
         border-width: 40px 0 40px 70px;
         border-color: transparent transparent transparent #ffffff;
     }
+
+    .student-avatar {
+        border-radius: 50%;
+    }
 </style>
 <style>
     /* 跳出視窗 CSS */
@@ -96,7 +100,7 @@
             const el = (i % 2 === 0) ? $('#template').find('.even-template').clone() : $('#template').find('.odd-template').clone();
             // 設定 心得回饋 內容 & 事件
             $(el).find('.collaborative-partner-feedback-author').text(collaborativePartnerFeedbacks[i].name);
-            $(el).find('.collaborative-partner-feedback-content').text(collaborativePartnerFeedbacks[i].content);
+            $(el).find('.collaborative-partner-feedback-content').find('.ellipsis-line-4').text(collaborativePartnerFeedbacks[i].content);
             $(el).find('.collaborative-partner-feedback-content').click(function () { showFeedbackModal(i) });
             $(el).find('.student-avatar').attr("src", collaborativePartnerFeedbacks[i].avatar);
             // 新增入 UI
