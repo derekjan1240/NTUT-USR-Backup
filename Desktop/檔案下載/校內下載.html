@@ -1,7 +1,18 @@
 <script>
+    const pageItemsNumber = 5;
     $(function () {
+        generateTable({
+            data: {
+                page: 0,
+            }
+        });
+    });
+
+    function generateTable(e) {
+        const data = e.data;
         if (downloadData.length) {
-            for (let i = 0; i < downloadData.length; i++) {
+            $('tbody').html('');
+            for (let i = data.page * pageItemsNumber; i < Math.min(downloadData.length, data.page * pageItemsNumber + pageItemsNumber); i++) {
                 const tr = $('#template').find('.tr-template').clone();
                 const icon = downloadData[i].fileType ? $('#template').find(`.${downloadData[i].fileType}-template`).clone() : null;
                 tr.find('.date').text(downloadData[i].date)
@@ -12,8 +23,20 @@
                 }
                 $('tbody').append(tr);
             }
+            generatePaginate(data.page);
         }
-    });
+    }
+
+    function generatePaginate(currentPage) {
+        $('#downloadTablePaginate').html('');
+        for (let i = 0; i < Math.ceil(downloadData.length / pageItemsNumber); i++) {
+            const paginate = $('#template').find('.paginate').clone();
+            paginate.find('span').text(i + 1);
+            i === currentPage ? paginate.addClass('paginate-activate') : null;
+            paginate.bind('click', { page: i }, generateTable);
+            $('#downloadTablePaginate').append(paginate);
+        }
+    }
 </script>
 <style>
     table {
@@ -58,6 +81,30 @@
         max-width: 1050px;
         padding: 100px 0;
     }
+
+    .paginate {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        color: '#4998b2';
+        margin: 0 16px 0 0;
+        border: solid 1px #ebebeb;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .paginate:hover {
+        color: #ffffff;
+        background-color: rgba(73, 152, 178, 0.56);
+    }
+
+    .paginate-activate {
+        color: #ffffff;
+        background-color: rgba(73, 152, 178, 0.56);
+    }
 </style>
 <div id="pageBackground" data-aos="zoom-in"></div>
 <div class="container" style="min-height: 80vh; min-width: 75vw;">
@@ -77,6 +124,7 @@
             </thead>
             <tbody></tbody>
         </table>
+        <div id="downloadTablePaginate" class="d-flex justify-content-center mt-5"></div>
     </div>
 </div>
 <div id="template" class="d-none">
@@ -104,4 +152,7 @@
     <a class="FILE-template text-info text-decoration-none" target="_blank">
         <i class="fas fa-file-alt fa-lg"></i>
     </a>
+    <div class="paginate">
+        <span></span>
+    </div>
 </div>
