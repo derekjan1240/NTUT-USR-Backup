@@ -1,133 +1,83 @@
-<section id="Section_Activity_Region" class="d-none d-lg-block">
-    <div class="activity-region-container">
-        <h1 class="activity-region-title animate__animated animate__jello">場 域 地 圖</h1>
-
-        <h1 class="activity-region-sub-title animate__animated animate__jello">TAIWAN</h1>
-        <img class="image-taiwan" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/416460590.png" />
-        <img class="image-wave" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/146602374.png" />
-        <img class="icon-location" id="icon-location-A"
-            src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/112303707.png" data-aos="zoom-in-up"
-            data-aos-duration="1000" />
-        <img class="icon-location" id="icon-location-B"
-            src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/112303707.png" data-aos="zoom-in-up"
-            data-aos-duration="1000" />
-        <img class="icon-location" id="icon-location-C"
-            src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/112303707.png" data-aos="zoom-in-up"
-            data-aos-duration="1000" />
-        <img class="icon-location" id="icon-location-D"
-            src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/112303707.png" data-aos="zoom-in-up"
-            data-aos-duration="1000" />
-        <div class="rectangle"></div>
-        <div class="activity-region-content-container" id="content-A">
-            <span class="activity-region-content-title-border"></span>
-            <p class="activity-region-content-title">台北</p>
-            <p class="activity-region-content">北科 社會責任辦公室</p>
-            <p class="activity-region-content-date">Since 2018</p>
+<section id="Section_Activity_Region">
+    <div id="activityRegionContainer">
+        <h1 id="activityRegionTitle" class="activity-region-title animate__animated animate__jello">場 域 地 圖</h1>
+        <h1 id="activityRegionSubTitle" class="activity-region-sub-title animate__animated animate__jello">TAIWAN</h1>
+        <div id="taiwanSection">
+            <div class="rectangle"></div>
         </div>
-
-        <div class="activity-region-content-container" id="content-B">
-            <span class="activity-region-content-title-border"></span>
-            <p class="activity-region-content-title">新竹</p>
-            <p class="activity-region-content">原住民安居構築<br />與綠色樂業推動計畫</p>
-            <p class="activity-region-content-date">2019.02-2019.10</p>
+        <img id="imageWave" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/146602374.png" />
+        <div id="activityRegionContentContainer">
+            <span id="activityRegionContentTitleBorder"></span>
+            <div class="d-flex align-items-center mb-3">
+                <p id="activityRegionContentTitle">台北</p>
+                <span id="activityRegionContentLable" class="label-usr">USR office</span>
+            </div>
+            <p id="activityRegionContent">北科 社會責任辦公室</p>
+            <p id="activityRegionContentDate">Since 2018</p>
         </div>
-
-        <div class="activity-region-content-container" id="content-C">
-            <span class="activity-region-content-title-border"></span>
-            <p class="activity-region-content-title">屏東</p>
-            <p class="activity-region-content">在地「富育」計畫 - 牡丹鄉</p>
-            <p class="activity-region-content-date">2019.02-2019.10</p>
-        </div>
-
-        <div class="activity-region-content-container" id="content-D">
-            <span class="activity-region-content-title-border"></span>
-            <p class="activity-region-content-title">馬祖</p>
-            <p class="activity-region-content">在地「富育」計畫 - 牡丹鄉</p>
-            <p class="activity-region-content-date">2019.02-2019.10</p>
+        <img id="activityRegionIcon" alt="計畫圖片" class="d-none">
+    </div>
+    <div>
+        <div id="cloneTemplate" class="d-none">
+            <img class="icon-location" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/112303707.png"
+                onclick="openPage(this)" data-aos="zoom-in-up" data-aos-duration="1000" />
         </div>
     </div>
 </section>
+
 <style type="text/css">
-    .activity-region-container {
-        margin-top: 105px;
+    #activityRegionContainer {
         position: relative;
-        width: 100vw;
-        min-height: 987px;
         background-image: linear-gradient(to bottom, #ccf1fd, var(--white) 71%);
+        height: 935px;
+        margin-top: 98px;
     }
 
-    .activity-region-title {
+    #imageWave {
         position: absolute;
-        top: 110px;
-        left: 178px;
+        bottom: 0;
+    }
+
+    #taiwanSection {
+        height: 75%;
+        background: url(https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/416460590.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 40%;
+        left: 40%;
+        top: 15%;
+    }
+
+    #activityRegionTitle {
+        position: absolute;
         color: #4998b2;
         font-size: 45px;
         line-height: 1.33;
-        z-index: 10;
+        left: 10%;
+        top: 13%;
+        z-index: 100;
     }
 
-    .activity-region-sub-title {
+    #activityRegionSubTitle {
         position: absolute;
-        top: 178px;
-        left: 180px;
         font-size: 35px;
         color: #999999;
-        z-index: 10;
+        left: 10%;
+        top: 20%;
+        z-index: 100;
     }
 
-    .activity-region-content-container {
-        font-family: 'SegoeUI';
+    #activityRegionContentContainer {
+        position: absolute;
         font-size: 25px;
         position: absolute;
+        top: 48%;
+        left: 30%;
+        letter-spacing: 2.5px;
     }
 
-    .icon-location {
-        width: 44.2px;
-        height: 60.7px;
-        position: absolute;
-    }
-
-    #icon-location-A {
-        top: 83px;
-        left: 1363px;
-    }
-
-    #icon-location-B {
-        top: 220px;
-        left: 1216px;
-    }
-
-    #icon-location-C {
-        top: 713px;
-        left: 1168px;
-    }
-
-    #icon-location-D {
-        top: 163px;
-        left: 614px;
-    }
-
-    #content-A {
-        top: 59px;
-        left: 1515px;
-    }
-
-    #content-B {
-        top: 134px;
-        left: 927px;
-    }
-
-    #content-C {
-        top: 709px;
-        left: 764px;
-    }
-
-    #content-D {
-        top: 298px;
-        left: 579px;
-    }
-
-    .activity-region-content-title-border {
+    #activityRegionContentTitleBorder {
         position: absolute;
         width: 60px;
         height: 21px;
@@ -137,47 +87,135 @@
         border-right: solid 2px #c0c0c0;
     }
 
-    .activity-region-content-title {
+    #activityRegionContentTitle {
         color: #5e5e5e;
-        margin-bottom: 23px;
     }
 
-    .activity-region-content {
+    #activityRegionContentLable {
+        cursor: pointer;
+        padding: 1px 17px 5px;
+        border-radius: 9px;
+        font-size: 25px;
+        color: white;
+        line-height: 1.32;
+        letter-spacing: 2.5px;
+        margin-left: 20px;
+    }
+
+    #activityRegionContent {
         color: #424242;
         margin-bottom: 3px;
     }
 
-    .activity-region-content-date {
+    #activityRegionContentDate {
+        letter-spacing: 2px;
         font-size: 20px;
         color: #858585;
     }
 
-    .image-taiwan {
+    .icon-location {
+        cursor: pointer;
         position: absolute;
-        width: 924px;
-        top: 68.5px;
-        left: 580px;
+        width: 44.2px;
+        z-index: 100;
     }
 
-    .image-people {
+    #activityRegionIcon {
         position: absolute;
-        top: 578px;
-        left: 115px;
-    }
-
-    .image-wave {
-        position: absolute;
-        bottom: 0px;
     }
 
     .rectangle {
         position: absolute;
-        top: 130px;
-        left: 565px;
+        top: 25px;
+        left: -25px;
         width: 158px;
         height: 158px;
         opacity: 0.27;
         border-radius: 15px;
         border: solid 1px #707070;
     }
+
+    .label-usr {
+        background-color: #4998b2;
+    }
+
+    .label-attachment {
+        background-color: #ff4967;
+    }
+
+    .label-hub {
+        background-color: #ffa747;
+    }
 </style>
+
+<script>
+    $(function () {
+        createLocationIcons();
+    });
+
+    // 產生場域地圖之地標
+    function createLocationIcons() {
+        activityRegionData.forEach((project) => {
+            const icon = $('#cloneTemplate').find('.icon-location').clone();
+            icon.data(project);
+            icon.css("top", `${project.position[0]}%`);
+            icon.css("left", `${project.position[1]}%`);
+            $('#taiwanSection').append(icon);
+        });
+        setIconsHover();
+    }
+
+    // 設定 Icon hover 事件
+    function setIconsHover() {
+        $('.icon-location').hover((el) => {
+            const data = $(el.target).data();
+            $(el.target).addClass('animate__animated animate__jello');
+            setActivityRegionContent(data);
+            showProjectIcon(data);
+        }, (el) => {
+            $(el.target).removeClass('animate__animated animate__jello');
+        });
+    }
+
+    // 顯示計畫 Icon
+    function showProjectIcon(data) {
+        if (!data.iconUrl) {
+            $('#activityRegionIcon').addClass('d-none');
+        } else {
+            $('#activityRegionIcon').removeClass('d-none');
+            $('#activityRegionIcon').attr('src', data.iconUrl);
+            $('#activityRegionIcon').css("top", `${data.iconPosition[0]}%`);
+            $('#activityRegionIcon').css("left", `${data.iconPosition[1]}%`);
+        }
+    }
+
+    // 顯示地標詳細資訊
+    function setActivityRegionContent(data) {
+        const labels = [
+            {
+                title: 'USR office',
+                labelClass: 'label-usr',
+            },
+            {
+                title: 'USR 附冊',
+                labelClass: 'label-attachment',
+            },
+            {
+                title: 'USR HUB',
+                labelClass: 'label-hub',
+            }
+        ]
+        $('#activityRegionContentTitle').text(data.location || '台北');
+        $('#activityRegionContentLable').text(labels[data.labelType].title);
+        $("#activityRegionContentLable").removeClass();
+        $("#activityRegionContentLable").addClass(labels[data.labelType].labelClass);
+        $('#activityRegionContent').text(data.title || '北科 社會責任辦公室');
+        $('#activityRegionContentDate').text(data.date || 'Since 2018');
+    }
+
+    // 開啟合作團隊頁面連結
+    function openPage(el) {
+        const link = $(el).data().url;
+        link ? window.open(link) : null;
+    }
+</script>
