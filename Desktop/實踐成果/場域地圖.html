@@ -28,8 +28,7 @@
     #activityRegionContainer {
         position: relative;
         background-image: linear-gradient(to bottom, #ccf1fd, var(--white) 71%);
-        height: 935px;
-        margin-top: 98px;
+        height: 845px;
     }
 
     #imageWave {
@@ -38,14 +37,15 @@
     }
 
     #taiwanSection {
-        height: 75%;
+        height: 737.6px;
         background: url(https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/416460590.png);
-        background-size: contain;
+        background-size: 100%;
         background-repeat: no-repeat;
         position: absolute;
-        width: 40%;
-        left: 40%;
-        top: 15%;
+        width: 600px;
+        right: 21%;
+        top: 13%;
+        z-index: 99;
     }
 
     #activityRegionTitle {
@@ -70,10 +70,10 @@
     #activityRegionContentContainer {
         position: absolute;
         font-size: 25px;
-        position: absolute;
-        top: 48%;
+        top: 45%;
         left: 30%;
         letter-spacing: 2.5px;
+        z-index: 200;
     }
 
     #activityRegionContentTitleBorder {
@@ -130,7 +130,7 @@
     .icon-location {
         cursor: pointer;
         position: absolute;
-        width: 44.2px;
+        width: 35px;
         z-index: 100;
     }
 
@@ -144,6 +144,27 @@
 
     .label-hub {
         background-color: #ffa747;
+    }
+
+    @media(max-width: 1024px) {
+        #activityRegionContainer {
+            height: 950px;
+        }
+
+        #taiwanSection {
+            top: 35%;
+            right: 10%;
+        }
+
+        #activityRegionContentContainer {
+            top: 65%;
+            left: 10%;
+        }
+
+        #activityRegionIcon {
+            bottom: 2% !important;
+            width: 30%;
+        }
     }
 </style>
 
@@ -189,7 +210,7 @@
         } else {
             $('#activityRegionIcon').removeClass('d-none');
             $('#activityRegionIcon').attr('src', data.iconUrl);
-            $('#activityRegionIcon').css("top", `${data.iconPosition[0]}%`);
+            $('#activityRegionIcon').css("bottom", `${data.iconPosition[0]}%`);
             $('#activityRegionIcon').css("left", `${data.iconPosition[1]}%`);
         }
     }
