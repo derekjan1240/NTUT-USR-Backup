@@ -19,8 +19,7 @@
     </div>
     <div>
         <div id="cloneTemplate" class="d-none">
-            <img class="icon-location" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/112303707.png"
-                onclick="openPage(this)" data-aos="zoom-in-up" data-aos-duration="1000" />
+            <img class="icon-location" onclick="openPage(this)" data-aos="zoom-in-up" data-aos-duration="1000" />
         </div>
     </div>
 </section>
@@ -113,13 +112,6 @@
         color: #858585;
     }
 
-    .icon-location {
-        cursor: pointer;
-        position: absolute;
-        width: 44.2px;
-        z-index: 100;
-    }
-
     #activityRegionIcon {
         position: absolute;
     }
@@ -133,6 +125,13 @@
         opacity: 0.27;
         border-radius: 15px;
         border: solid 1px #707070;
+    }
+
+    .icon-location {
+        cursor: pointer;
+        position: absolute;
+        width: 44.2px;
+        z-index: 100;
     }
 
     .label-usr {
@@ -155,11 +154,17 @@
 
     // 產生場域地圖之地標
     function createLocationIcons() {
+        const locationIcons = [
+            "https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/181495897.png",
+            "https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/914330304.png",
+            "https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/112303707.png",
+        ]
         activityRegionData.forEach((project) => {
             const icon = $('#cloneTemplate').find('.icon-location').clone();
             icon.data(project);
             icon.css("top", `${project.position[0]}%`);
             icon.css("left", `${project.position[1]}%`);
+            icon.attr('src', locationIcons[project.labelType]);
             $('#taiwanSection').append(icon);
         });
         setIconsHover();
