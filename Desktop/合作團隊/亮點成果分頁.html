@@ -1,0 +1,65 @@
+<!-- 亮點介紹樣板 -->
+<div class="container-fluid" style="padding: 10vw;">
+    <div class="row">
+        <p id="contentTitle" class="display-4 mt-5"><b>合作團隊標題</b></p>
+    </div>
+    <hr />
+    <div class="row" style="margin-top: 72px;">
+        <div class="col-12 col-md-5 px-5">
+            <!-- 這裡為亮點圖片 -->
+            <img id="contentImage" alt="圖片載入失敗" class="w-100" />
+        </div>
+
+        <div class="col mt-4 mt-md-0 px-5">
+            <!-- 這裡為亮點內容 -->
+            <div class="d-flex flex-column bd-highlight mb-3 mt-sm-3">
+                <!-- 亮點簡介區塊 -->
+                <div class="p-2 bd-highlight">
+                    <span style="font-size: 2.5rem; letter-spacing: 5px;">
+                        <p class="text-center text-secondary">亮點介紹</p>
+                    </span>
+                    <hr />
+                    <span style="font-size: 2rem;">
+                        <p id="contentSubTitle" class="my-4">亮點標題</p>
+                        <p id="contentIntro" class="text-secondary">亮點內容</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style type="text/css">
+    #contentTitle {
+        font-size: 38px !important;
+        color: #000000;
+        margin-bottom: .5rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    #contentSubTitle {
+        font-weight: bold;
+    }
+
+    hr {
+        border-top: 2px solid rgba(0, 0, 0, .1);
+    }
+
+    .text-secondary {
+        line-height: 1.5;
+        color: #6c757d !important;
+    }
+</style>
+<script>
+    $(function () {
+        const data = collaborativePartnerHighlights[window.location.hash.split('#')[1]];
+        setContent(data);
+    });
+
+    function setContent(data) {
+        document.querySelector('#contentTitle').textContent = collaborativePartnerMain.title;
+        document.querySelector('#contentImage').src = data.image;
+        document.querySelector('#contentSubTitle').textContent = data.title;
+        document.querySelector('#contentIntro').textContent = data.intro;
+    }
+</script>

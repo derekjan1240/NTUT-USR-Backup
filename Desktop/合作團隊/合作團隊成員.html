@@ -12,10 +12,13 @@
     }
 
     .collaborative-partner-member-title {
-        padding: 92px 0 98px;
+        padding: 92px 0 98px !important;
+        ;
         color: #4998b2;
-        font-size: 45px;
-        line-height: 1.33;
+        font-size: 45px !important;
+        ;
+        line-height: 1.33 !important;
+        ;
     }
 
     #collaborativePartnerMemberContentContainer {
@@ -128,6 +131,8 @@
         if (!collaborativePartnerMember[index]) { return }
 
         if (collaborativePartnerMember[index].link) {
+            // 不跳介紹也不另開連結網站
+            if (collaborativePartnerMember[index].link === "none") { return }
             // 不跳介紹改另開連結網站
             window.open(collaborativePartnerMember[index].link);
         } else {
