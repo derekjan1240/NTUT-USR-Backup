@@ -2,37 +2,10 @@
     <div class="annual-book-container">
         <h1 id="annualBookTitle" class="animate__animated animate__jello">年 度 專 刊</h1>
         <div id="booksWrapper" class="row justify-content-center justify-content-xl-start" data-aos="flip-left">
-            <div class="col-md-4 book-wrapper" style="cursor: pointer;">
-                <div class="d-flex flex-column">
-                    <div class="p-2">
-                        <a href="#" target="_blank" rel="noreferrer noopener">
-                            <img class="book-image"
-                                src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3225/317420232.png" />
-                        </a>
-                    </div>
-                    <div class="pl-2">
-                        <div class="p-2 book-content-title font-weight-bold">成果專刊</div>
-                        <div class="p-2 book-content-date">2020.03</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 book-wrapper" style="cursor: pointer;">
-                <div class="d-flex flex-column">
-                    <div class="p-2">
-                        <a href="https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/534917697.pdf" target="_blank"
-                            rel="noreferrer noopener">
-                            <img class="book-image"
-                                src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3225/531686235.png" />
-                        </a>
-                    </div>
-                    <div class="pl-2">
-                        <div class="p-2 book-content-title font-weight-bold">成果專刊</div>
-                        <div class="p-2 book-content-date">2019.03</div>
-                    </div>
-                </div>
-            </div>
         </div>
+        <div id="annualBookPaginate" class="d-flex justify-content-start mt-5"></div>
 </section>
+
 <style type="text/css">
     .annual-book-container {
         background: url(https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/589698205.png);
@@ -66,7 +39,7 @@
         color: #707070;
     }
 
-    .book-image {
+    .book-content-image {
         -webkit-filter: drop-shadow(8px 8px 6px rgba(0, 0, 0, 0.7));
         filter: drop-shadow(8px 8px 6px rgba(0, 0, 0, 0.7))
     }
@@ -76,25 +49,34 @@
         color: #707070;
     }
 
-    .paginate-container {
-        position: absolute;
-        left: 178px;
-        top: 982px;
+    #annualBookPaginate {
+        padding: 93px 15px 0;
+        position: relative;
+        z-index: 100;
     }
 
     .paginate {
-        font-family: "SegoeUI";
+        width: 40px;
+        height: 40px;
         font-size: 20px;
-        padding: 7px 15px;
+        color: '#4998b2';
+        margin: 0 16px 0 0;
         border: solid 1px #ebebeb;
-        color: rgba(73, 152, 178, 0.55);
-        background: white;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
     }
 
-    .paginate-active {
-        color: white;
-        background: rgba(73, 152, 178, 0.55);
+    .paginate:hover {
+        color: #ffffff;
+        background-color: rgba(73, 152, 178, 0.56);
+    }
+
+    .paginate-activate {
+        color: #ffffff;
+        background-color: rgba(73, 152, 178, 0.56);
     }
 
     @media (min-width: 1366px) {
@@ -103,8 +85,52 @@
             text-align: initial;
         }
 
-        #booksWrapper {
+        #booksWrapper,
+        #annualBookPaginate {
             margin: 0 816.5px 0 169px;
         }
     }
 </style>
+
+<script>
+    /* 每頁顯示數量 預設為 3 筆 */
+    const pageItemsNumber = customPaginateOffset || 3;
+    $(function () {
+        if (annualBooks.length <= pageItemsNumber) {
+            $('#annualBookPaginate').removeClass('d-flex');
+            $('#annualBookPaginate').addClass('d-none');
+        }
+        generateBooks({
+            data: {
+                page: 0,
+            }
+        });
+    });
+
+    function generateBooks(e) {
+        const data = e.data;
+        if (annualBooks.length) {
+            $('#booksWrapper').html('');
+            for (let i = data.page * pageItemsNumber; i < Math.min(annualBooks.length, data.page * pageItemsNumber + pageItemsNumber); i++) {
+                const book = $('#template').find('.book-wrapper').clone();
+                book.find('.book-content-title').text(annualBooks[i].title);
+                book.find('.book-content-image').attr("src", annualBooks[i].image);
+                book.find('.book-content-date').text(annualBooks[i].date);
+                book.find('a').attr('href', annualBooks[i].link);
+                $('#booksWrapper').append(book);
+            }
+            generatePaginate(data.page);
+        }
+    }
+
+    function generatePaginate(currentPage) {
+        $('#annualBookPaginate').html('');
+        for (let i = 0; i < Math.ceil(annualBooks.length / pageItemsNumber); i++) {
+            const paginate = $('#template').find('.paginate').clone();
+            paginate.find('span').text(i + 1);
+            i === currentPage ? paginate.addClass('paginate-activate') : null;
+            paginate.bind('click', { page: i }, generateBooks);
+            $('#annualBookPaginate').append(paginate);
+        }
+    }
+</script>
