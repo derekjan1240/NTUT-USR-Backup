@@ -10,8 +10,8 @@
 
     .collaborative-partner-feedbacks-title {
         color: #4998b2;
-        font-size: 45px;
-        line-height: 1.33;
+        font-size: 45px !important;
+        line-height: 1.33 !important;
     }
 
     .collaborative-partner-feedback-container {
@@ -113,6 +113,22 @@
         $('#collaborative-partner-feedback-template').find('#stuentAvatar').attr("src", collaborativePartnerFeedbacks[index].avatar);
         $('#collaborative-partner-feedback-template').find('#studentName').text(collaborativePartnerFeedbacks[index].name);
         $('#collaborative-partner-feedback-template').find('#studentFeedback').text(collaborativePartnerFeedbacks[index].content);
+
+        const youtubeLinkElement = $('#collaborative-partner-feedback-template').find('#studentLinks > #studentYoutube');
+        if (collaborativePartnerFeedbacks[index].youtube) {
+            youtubeLinkElement.attr("href", collaborativePartnerFeedbacks[index].youtube);
+            youtubeLinkElement.removeClass('d-none');
+        } else {
+            youtubeLinkElement.addClass('d-none');
+        }
+
+        const otherLinkElement = $('#collaborative-partner-feedback-template').find('#studentLinks > #studentOtherLink').attr("src", collaborativePartnerFeedbacks[index].otherLink);
+        if (collaborativePartnerFeedbacks[index].otherLink) {
+            otherLinkElement.attr("href", collaborativePartnerFeedbacks[index].otherLink);
+            otherLinkElement.removeClass('d-none');
+        } else {
+            otherLinkElement.addClass('d-none');
+        }
 
         Swal.fire({
             title: '',
