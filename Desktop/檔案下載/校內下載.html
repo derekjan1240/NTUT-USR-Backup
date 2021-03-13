@@ -1,5 +1,7 @@
 <script>
-    const pageItemsNumber = 5;
+    const pageItemsNumber = customPaginateOffset || 5;
+    const fileTypesGatalog = ["PDF", "WORD", "EXCEL", "PPT", "FILE"];
+
     $(function () {
         generateTable({
             data: {
@@ -14,7 +16,7 @@
             $('tbody').html('');
             for (let i = data.page * pageItemsNumber; i < Math.min(downloadData.length, data.page * pageItemsNumber + pageItemsNumber); i++) {
                 const tr = $('#template').find('.tr-template').clone();
-                const icon = downloadData[i].fileType ? $('#template').find(`.${downloadData[i].fileType}-template`).clone() : null;
+                const icon = $('#template').find(`.${fileTypesGatalog[downloadData[i].fileType]}-template`).clone();
                 tr.find('.date').text(downloadData[i].date)
                 tr.find('.title').text(downloadData[i].title)
                 if (icon) {
