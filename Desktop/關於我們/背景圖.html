@@ -18,17 +18,3 @@
         position: fixed;
     }
 </style>
-<script>
-    window.onscroll = function () { adjustBackgroundHeight() };
-
-    function adjustBackgroundHeight() {
-        let limit = $(window).width() > 767 ? 1500 : 2300;
-        if (document.documentElement.scrollTop > limit) {
-            document.querySelector('.about-us-background').style.height = 0;
-            document.querySelector('.planets-background').style.display = 'none';
-        } else {
-            document.querySelector('.about-us-background').style.height = '987px';
-            document.querySelector('.planets-background').style.display = 'block';
-        }
-    }
-</script>

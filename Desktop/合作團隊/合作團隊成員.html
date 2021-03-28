@@ -120,6 +120,9 @@
             $(el).find('.collaborative-partner-member-content-name').text(collaborativePartnerMember[i].name);
             $(el).find('.collaborative-partner-member-content-department').text(`${collaborativePartnerMember[i].organization}`);
             $(el).click(function () { showPartnerMemberModal(i) });
+            if (collaborativePartnerMember[i].link != "none") {
+                $(el).find('.d-flex').css({ cursor: "pointer" });
+            }
             // 新增入 UI
             $('#collaborativePartnerMemberContentWrapper').append(el);
         }

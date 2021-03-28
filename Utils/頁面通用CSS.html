@@ -4,6 +4,20 @@
         background: white !important;
     }
 
+    h1 {
+        font-weight: normal !important;
+        font-stretch: normal !important;
+        font-style: normal !important;
+    }
+
+    ::selection {
+        background: lightblue;
+    }
+
+    .toTop:before {
+        left: 16px;
+    }
+
     .float-on-bg {
         position: relative;
         z-index: 100;
@@ -69,6 +83,13 @@
     .ellipsis-line-4 {
         display: -webkit-box;
         -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .ellipsis-line-5 {
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
