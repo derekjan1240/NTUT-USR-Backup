@@ -1,9 +1,9 @@
 <div id="Footer" class="d-flex align-items-center text-white w-100">
+    <img id="nyan" class="d-none" src="https://osausr.rpage.ntut.edu.tw/var/file/1/1001/img/3385/nyan.gif">
     <div class="d-block d-md-none container-fluid px-0">
         <div class="row text-center">
             <div class="col-12 d-flex justify-content-center">
-                <img id="footerLogo" class="shake-slow m-0"
-                    src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3332/1.png">
+                <img class="footer-logo shake-slow m-0" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3332/1.png">
             </div>
             <div class="col-12 mt-4">
                 <div class="d-flex flex-column">
@@ -19,10 +19,9 @@
     </div>
     <div class="d-none d-md-block container-fluid">
         <div class="row align-items-center">
-            <div class="col-12 col-lg-8">
+            <div class="col-12 col-lg-8 col-xl-7">
                 <div class="d-flex flex-row align-items-center">
-                    <img class="shake-slow" id="footerLogo"
-                        src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3332/1.png">
+                    <img class="footer-logo shake-slow" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3332/1.png">
                     <div class="d-flex flex-column">
                         <p class="footer-title m-0">
                             <a class="text-decoration-none text-white" href="https://www.ntut.edu.tw/" target="_blank"
@@ -36,7 +35,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-4 d-none d-lg-block">
+            <div class="col-12 col-lg-4 col-xl-5 d-none d-lg-block">
                 <div class="d-flex flex-column text-right">
                     <p class="footer-address m-0">106 臺北市大安區忠孝東路三段1號 行政大樓十樓 USR 辦公室</p><br>
                     <p class="footer-address m-0">TEL : (02) 27771-2171 #1220、#1221</p>
@@ -57,9 +56,21 @@
         z-index: 100;
     }
 
-    #footerLogo {
+    #nyan {
+        position: absolute;
+        width: 100px;
+        left: 0;
+        top: -62px;
+    }
+
+    #Footer {
+        position: relative;
+        height: 154px;
+    }
+
+    .footer-logo {
         margin-right: 40px;
-        width: 90px;
+        width: 117px;
     }
 
     .footer-address {
@@ -110,11 +121,56 @@
         display: flex;
         align-items: center;
         padding: 0;
-        height: 154px;
         background-color: #424242;
     }
 </style>
 
 <script>
-    AOS.init();
+    let path = 0;
+
+    $(function () {
+        init();
+    });
+
+    function init() {
+        // AOS trigger
+        AOS.init();
+        $(".footer-logo").dblclick(() => {
+            Swal.fire({
+                title: $('#nyan')?.hasClass('d-none') ? '確定要叫 Nyan 出來玩?' : '確定要隱藏 Nyan 嗎?',
+                icon: 'question',
+                width: 700,
+                showCancelButton: true,
+                cancelButtonText: 'No',
+                confirmButtonText: 'Yes',
+                showCloseButton: true,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    if ($('#nyan')?.hasClass('d-none')) {
+                        path = 0;
+                        $('#nyan').css('left', 0);
+                        $('#nyan').removeClass('d-none');
+                    } else {
+                        $('#nyan').addClass('d-none');
+                    }
+                }
+            });
+        });
+        $('#nyan').click(() => {
+            Swal.fire({
+                html: `<img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3385/nyan_with_bg.gif">`,
+                showCloseButton: true,
+                showConfirmButton: false,
+            });
+        });
+        // nyan cat running
+        setInterval(() => {
+            if (path >= 20) {
+                path = 0;
+            } else {
+                path += 1;
+            }
+            $('#nyan').css('left', `${path * 5}%`);
+        }, 350);
+    }
 </script>

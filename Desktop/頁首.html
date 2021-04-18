@@ -1,33 +1,66 @@
+<!-- Boostrap 4 -->
+<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
 <style type="text/css">
-    body {
-        font-family: 'SegoeUI', 'Noto Sans TC';
-    }
-
-    .header {
-        /* hidden system top color bar */
-        border-top: 0px;
-    }
-
     /* 移除系統 Header 高度，改使用自訂 Header */
     #Dyn_head {
         height: 0px;
     }
 </style>
 <style type="text/css">
+    #navLogoImageWrapper {
+        margin: 0 32px 0 75px;
+    }
+
+    #navLogoImage {
+        max-width: 143px;
+        cursor: pointer;
+    }
+
+    .header-title {
+        font-size: 25px;
+        line-height: 1.32;
+        letter-spacing: normal;
+        white-space: nowrap;
+    }
+
+    .header-sub-title {
+        font-size: 15px;
+        line-height: 3.07;
+        letter-spacing: normal;
+        white-space: nowrap;
+    }
+
     .nav-item {
-        height: 37px;
-        width: 112px;
-        margin-left: 85px;
+        margin: 0 32px;
     }
 
-    #nav-img {
-        top: -25px;
-        position: relative;
-        width: 143px;
+    /* 避免 dropdown overflow */
+    .dropdown-toggle {
+        white-space: inherit;
     }
 
-    .navbar {
-        border: 0;
+    .nav-link {
+        font-size: 28px !important;
+        width: fit-content;
+        cursor: pointer;
+    }
+
+    .dropdown-menu {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dropdown-item {
+        font-size: 18px;
     }
 
     .dropdown-item.active,
@@ -35,23 +68,33 @@
         background-color: #4998b2 !important;
     }
 
-    @media (min-width: 1200px) {
-        .header .navbar {
-            height: 120px;
-            z-index: 9;
-            clear: both;
+    /* Zoom */
+    @media (min-width: 1200px) and (max-width: 1800px) {
+        #navLogoImage {
+            max-width: 90px;
         }
 
-        .navbar-nav {
-            margin-right: 100px;
+        .header-title {
+            font-size: 20px;
+        }
+
+        .header-sub-title {
+            font-size: 10px;
+        }
+
+        .nav-link {
+            font-size: 20px !important;
         }
     }
 
-    @media (min-width: 768px) and (max-width: 1200px) {
-        .navbar-nav .open #dropdown-menu {
-            position: relative;
-            top: 0%;
-            border-bottom: none !important;
+    /* Pad */
+    @media (min-width: 768px) and (max-width: 1199px) {
+        #navLogoImageWrapper {
+            margin: 0 10px;
+        }
+
+        #navLogoImage {
+            max-width: 100px;
         }
 
         .collapse:not(.show) {
@@ -61,49 +104,17 @@
         #navbarNavDropdown {
             display: unset;
         }
-
-        #nav-img {
-            top: -15px;
-            position: relative;
-            width: 110px;
-        }
-
-        #officeIntroList>li {
-            margin: 5px 0;
-            width: 100vw;
-        }
     }
 
+    /* Mobile */
     @media(max-width: 767px) {
-        #officeIntroList>li {
-            margin: 0;
-            width: 100vw;
+        #navLogoImageWrapper {
+            margin: 10px;
+            max-width: 30vw;
         }
 
-        #officeIntroList>li>a:after {
-            display: inline-block;
-            margin-left: .255em;
-        }
-
-        #officeIntroList>li>a:before {
-            all: unset;
-        }
-
-        .navbar-dark .navbar-nav .nav-link {
-            font-size: 25px;
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: 1.32;
-            letter-spacing: normal;
-            text-align: center;
-            color: var(--white);
-            white-space: nowrap;
-            padding: 0px;
-        }
-
-        #officeIntroList>li>a {
-            border-bottom: none !important;
+        .dropdown-divider {
+            border-top: 0;
         }
 
         .topnav li:hover>a,
@@ -111,84 +122,43 @@
         .navbar-nav .open>a:hover,
         .navbar-nav .open>a:focus,
         .navbar-nav>li>a:hover {
-            background: none !important;
+            background: none;
+            border-bottom: 1px solid rgb(255 255 255 / 20%);
         }
 
-        .navbar-nav .open #dropdown-menu {
-            position: relative;
-            top: 0%;
-            float: none;
-            width: auto;
-            margin-top: 0;
-            background-color: white;
-            border: 0;
-            -webkit-box-shadow: none;
+        .navbar-nav>li>a {
+            background: none;
+            border-bottom: 1px solid rgb(255 255 255 / 20%);
+        }
+
+        .topnav li a:before,
+        .navbar-nav>li>a:before {
+            display: none;
         }
 
         .topnav li a:after,
         .navbar-nav>li>a:after {
-            position: relative;
-            left: 100px;
-            content: "";
-            display: block;
-            width: 0;
-            bottom: 27px;
-            background: none;
-        }
-
-        #nav-img {
-            top: -15px;
-            position: relative;
-            width: 120px;
+            display: none;
         }
 
         .nav-link {
+            width: 100%;
+            text-align: center;
             font-size: 20px !important;
+            font-weight: 500;
         }
 
         .dropdown-item {
             font-size: 15px !important;
+            color: #f8f9fa;
+            padding: 10px;
         }
-    }
 
-    .navbar-nav>li>a:after {
-        color: #f8f9fa;
-    }
-
-    .navbar-dark .navbar-nav .nav-link {
-        font-size: 25px;
-        line-height: 1.32;
-        letter-spacing: normal;
-        text-align: center;
-        white-space: nowrap;
-        padding: 0px;
-        cursor: pointer;
-    }
-
-    .dropdown-item {
-        font-size: 18px;
-    }
-
-    .header-title {
-        width: 400px;
-        height: 33px;
-        font-size: 25px;
-        line-height: 1.32;
-        letter-spacing: normal;
-        text-align: left;
-        white-space: nowrap;
-    }
-
-    .header-sub-title {
-        width: 526px;
-        height: 20px;
-        font-size: 15px;
-        line-height: 3.07;
-        letter-spacing: normal;
-        text-align: center;
-        position: relative;
-        bottom: 5px;
-        white-space: nowrap;
+        .navbar-toggler {
+            position: absolute;
+            top: 45px;
+            right: 5vw;
+        }
     }
 </style>
 
@@ -196,12 +166,14 @@
 <div class="fixed-top">
     <div class="container-fluid d-flex align-items-center justify-content-center px-0 mx-0">
         <div class="row" style="background: #4998b2; min-height:120px; width: 100vw;">
-            <nav class="navbar navbar-expand-xl navbar-dark col-xl-12 p-0">
-                <a class="navbar-brand mx-xl-5" href="https://osausr.ntut.edu.tw/">
-                    <img alt="社會責任實踐計畫" class="d-inline-block align-top" height="30" id="nav-img" loading="lazy"
+            <nav class="navbar navbar-expand-xl navbar-dark justify-content-center w-100">
+
+                <div id="navLogoImageWrapper" class="d-flex justify-content-center align-items-center">
+                    <img id="navLogoImage" alt="社會責任實踐計畫" class="d-inline-block align-top" width="143" loading="lazy"
                         src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3332/1.png" />
-                </a>
-                <div>
+                </div>
+
+                <div class="d-flex flex-column justify-content-center align-items-start">
                     <p class="header-title text-white mb-0 d-none d-md-block">國立臺北科技大學<span class="px-2"> |
                         </span>社會責任實踐計畫</p>
 
@@ -211,13 +183,13 @@
                 </div>
 
                 <button aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"
-                    class="navbar-toggler bg-secondary mr-5" data-target="#navbarNavDropdown" data-toggle="collapse"
-                    type="button"><span class="navbar-toggler-icon"></span></button>
+                    class="navbar-toggler bg-dark mx-5 px-3 py-2 " data-target="#navbarNavDropdown"
+                    data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
 
 
-                <div class="collapse navbar-collapse navbar-collapse-center justify-content-end" id="navbarNavDropdown"
-                    style="max-width: 60%;">
-                    <ul class="navbar-nav navbar-center pt-5 pt-xl-0" id="officeIntroList">
+                <div class="collapse navbar-collapse navbar-collapse-center justify-content-center"
+                    id="navbarNavDropdown">
+                    <ul class="navbar-nav navbar-center" id="officeIntroList">
                         <li class="nav-item dropdown">
                             <a class="nav-link text-white dropdown-toggle" data-toggle="dropdown" role="button"
                                 aria-haspopup="true" aria-expanded="false" id="">關於我們</a>
@@ -235,22 +207,27 @@
                                     href="https://osausr.ntut.edu.tw/p/426-1001-26.php?Lang=zh-tw#Section_Logo">Logo理念</a>
                             </div>
                         </li>
-                        <li class="nav-item dropdown ">
+                        <li class="nav-item">
                             <a class="nav-link text-white"
                                 href="https://osausr.ntut.edu.tw/p/403-1001-11-1.php?Lang=zh-tw">最新公告</a>
                         </li>
-                        <li class="nav-item dropdown "><a class="nav-link text-white dropdown-toggle"
-                                data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">檔案下載</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-white dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">檔案下載</a>
                             <div class="dropdown-menu" id="dropdown-menu">
                                 <a class="dropdown-item"
-                                    href="https://osausr.ntut.edu.tw/p/426-1001-31.php?Lang=zh-tw">公開資料</a>
+                                    href="https://osausr.ntut.edu.tw/p/426-1001-58.php?Lang=zh-tw">校內相關辦法</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item"
-                                    href="https://osausr.ntut.edu.tw/p/426-1001-35.php?Lang=zh-tw">校內下載</a>
+                                    href="https://osausr.ntut.edu.tw/p/426-1001-31.php?Lang=zh-tw">資訊分享</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item"
+                                    href="https://osausr.ntut.edu.tw/p/426-1001-35.php?Lang=zh-tw">USR 計畫團隊</a>
                             </div>
                         </li>
-                        <li class="nav-item dropdown "><a class="nav-link text-white dropdown-toggle"
-                                data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">實踐成果</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-white dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">實踐成果</a>
                             <div class="dropdown-menu" id="dropdown-menu">
                                 <a class="dropdown-item"
                                     href="https://osausr.ntut.edu.tw/p/426-1001-29.php?Lang=zh-tw#Section_Annual_Book">年度專刊</a>
@@ -262,7 +239,8 @@
                                     href="https://osausr.ntut.edu.tw/p/426-1001-42.php?Lang=zh-tw">培力課程</a>
                             </div>
                         </li>
-                        <li class="nav-item dropdown "><a class="nav-link text-white"
+                        <li class="nav-item">
+                            <a class="nav-link text-white"
                                 href="https://osausr.ntut.edu.tw/p/426-1001-36.php?Lang=zh-tw">合作團隊</a>
                         </li>
                     </ul>
@@ -271,7 +249,14 @@
         </div>
     </div>
 </div>
+
 <script>
+    $(function () {
+        $('#navLogoImage').click(() => {
+            window.location = 'https://osausr.ntut.edu.tw/';
+        });
+    });
+
     function goto(el) {
         document.querySelector(el).scrollIntoView();
     }
