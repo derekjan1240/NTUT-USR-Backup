@@ -55,17 +55,18 @@
     }
 
     .dropdown-menu {
-        width: 100%;
+        min-width: 100%;
         text-align: center;
+        background: #f8f9fa;
     }
 
     .dropdown-item {
-        font-size: 18px;
+        font-size: 1.8rem;
     }
 
     .dropdown-item.active,
     .dropdown-item:active {
-        background-color: #4998b2 !important;
+        background-color: rgba(73, 152, 178, 0.56) !important;
     }
 
     /* Zoom */
@@ -104,6 +105,17 @@
         #navbarNavDropdown {
             display: unset;
         }
+
+        .nav-link {
+            width: 100%;
+            text-align: center;
+            font-size: 2rem !important;
+            padding: 1.5rem !important;
+        }
+
+        .navbar-nav>li>a {
+            border-bottom: 1px solid rgb(255 255 255 / 20%);
+        }
     }
 
     /* Mobile */
@@ -111,10 +123,6 @@
         #navLogoImageWrapper {
             margin: 10px;
             max-width: 30vw;
-        }
-
-        .dropdown-divider {
-            border-top: 0;
         }
 
         .topnav li:hover>a,
@@ -138,7 +146,10 @@
 
         .topnav li a:after,
         .navbar-nav>li>a:after {
-            display: none;
+            display: initial;
+            width: initial;
+            background: initial;
+            top: 40%;
         }
 
         .nav-link {
@@ -150,7 +161,6 @@
 
         .dropdown-item {
             font-size: 15px !important;
-            color: #f8f9fa;
             padding: 10px;
         }
 
@@ -158,6 +168,10 @@
             position: absolute;
             top: 45px;
             right: 5vw;
+        }
+
+        .dropdown-menu {
+            background-color: #f8f9fa !important;
         }
     }
 </style>
