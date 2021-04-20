@@ -1,6 +1,6 @@
 <script>
     const pageItemsNumber = customPaginateOffset || 5;
-    const fileTypesGatalog = ["PDF", "WORD", "EXCEL", "PPT", "FILE"];
+    const fileTypesGatalog = ["ODT", "PDF", "WORD", "EXCEL", "PPT", "FILE"];
 
     $(function () {
         generateTable({
@@ -61,7 +61,6 @@
         height: 1233px;
         position: fixed;
         top: 0;
-        z-index: -1;
     }
 
     #fileDownloadTitle {
@@ -76,7 +75,6 @@
         position: absolute;
         left: 70%;
         top: 15%;
-        z-index: -1;
     }
 
     #downloadTable {
@@ -109,11 +107,11 @@
     }
 </style>
 <div id="pageBackground" data-aos="zoom-in"></div>
-<div class="container" style="min-height: 80vh; min-width: 75vw;">
+<div class="container" style="min-height: 80vh; min-width: 75vw; position: relative;">
     <img id="planetIcon" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3364/193985670.png" alt="星球"
         data-aos="zoom-in" data-aos-offset="0" data-aos-delay="300" data-aos-duration="500">
     <div class="row">
-        <h1 id="fileDownloadTitle" class="text-center w-100 animate__animated animate__jello">檔案下載 - 校內</h1>
+        <h1 id="fileDownloadTitle" class="text-center w-100 animate__animated animate__jello">檔案下載 - USR 計畫團隊</h1>
     </div>
     <div id="downloadTable" class="row table-responsive m-0">
         <table class="table">
@@ -139,6 +137,9 @@
             </tr>
         </thead>
     </table>
+    <a class="ODT-template text-primary text-decoration-none" target="_blank">
+        <i class="fas fa-file-alt fa-lg"></i>
+    </a>
     <a class="PDF-template text-danger text-decoration-none" target="_blank">
         <i class="fas fa-file-pdf fa-lg"></i>
     </a>
@@ -152,7 +153,7 @@
         <i class="fa fa-file-powerpoint fa-lg" style="color:#D04423;"></i>
     </a>
     <a class="FILE-template text-info text-decoration-none" target="_blank">
-        <i class="fas fa-file-alt fa-lg"></i>
+        <i class="fas fa-file fa-lg"></i>
     </a>
     <div class="paginate">
         <span></span>
