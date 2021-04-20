@@ -1,5 +1,5 @@
 <div id="Footer" class="d-flex align-items-center text-white w-100">
-    <img id="nyan" class="shake-slow d-none" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3385/nyan.gif">
+    <img id="nyan" class="d-none" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3385/nyan.gif">
     <div class="d-block d-md-none container-fluid px-0">
         <div class="row text-center">
             <div class="col-12 d-flex justify-content-center">
@@ -157,13 +157,13 @@
                 }
             });
         });
-        $('#nyan').click(() => {
-            Swal.fire({
-                html: `<img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3385/nyan_with_bg.gif">`,
-                showCloseButton: true,
-                showConfirmButton: false,
-            });
+
+        $('#nyan').hover((el) => {
+            $(el.target).addClass('animate__animated animate__tada');
+        }, (el) => {
+            $(el.target).removeClass('animate__animated animate__tada');
         });
+
         // nyan cat running
         setInterval(() => {
             if (path >= 20) {
