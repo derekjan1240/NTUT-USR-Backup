@@ -1,9 +1,10 @@
-<div class="d-flex flex-column collaborative-partner-hambuger-button" onmouseenter=" triggerMenu()">
+<div class="d-flex flex-column collaborative-partner-hambuger-button">
     <span class="hambuger-line-one"></span>
     <span class="hambuger-line-two mt-2"></span>
     <span class="hambuger-line-three mt-2"></span>
 </div>
-<div id="collaborative-partner-menu" class="collaborative-partner-menu pr-5" onmouseleave=" triggerMenu()">
+<div id="collaborative-partner-menu" class="collaborative-partner-menu pr-5" onmouseleave="triggerMenu();">
+    <i id="closeIcon" class="fas fa-times-circle fa-2x d-xl-none" onclick="triggerMenu();"></i>
     <div class="d-flex flex-column menu-content-container">
         <div class="menu-title">○ 109-111學年度</div>
         <a class="text-decoration-none" href="https://osausr.ntut.edu.tw/p/426-1001-36.php?Lang=zh-tw">
@@ -50,6 +51,12 @@
     </div>
 </div>
 <style type="text/css">
+    #closeIcon {
+        position: absolute;
+        top: 2%;
+        right: 2%;
+    }
+
     #collaborative-partner-menu {
         display: none;
         position: fixed;
@@ -118,6 +125,12 @@
 </style>
 
 <script>
+    $('.collaborative-partner-hambuger-button').hover((el) => {
+        if (!$('.collaborative-partner-menu').is(':visible')) {
+            triggerMenu();
+        }
+    });
+
     function triggerMenu() {
         $("#collaborative-partner-menu").animate({ width: 'toggle' });
     }
