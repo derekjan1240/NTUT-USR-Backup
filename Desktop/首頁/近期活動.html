@@ -30,7 +30,13 @@
         font-weight: bold;
         color: #000;
         right: 5%;
-        bottom: -5%;
+        bottom: initial;
+    }
+
+    @media (min-width: 767px) {
+        #latestActivityMore {
+            bottom: -5%;
+        }
     }
 
     #latestActivityMore:hover {
