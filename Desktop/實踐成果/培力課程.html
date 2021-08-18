@@ -1,9 +1,12 @@
 <div id="coursesContainer">
     <div class="container-fluid px-0">
         <p id="coursesTitle" class="w-100 text-center animate__animated animate__jello">社 會 實 踐 課 程</p>
-        <img id="img_plant" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/107723121.png" alt="星球">
-        <img id="img_star_big" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/840449648.png" alt="星星">
-        <img id="img_star_small" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/194586544.png" alt="星星">
+        <img id="img_plant" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/107723121.png" alt="星球"
+            data-aos="zoom-in">
+        <img id="img_star_big" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/840449648.png" alt="星星"
+            data-aos="zoom-in">
+        <img id="img_star_small" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/194586544.png" alt="星星"
+            data-aos="zoom-in">
         <div id="yearMenu" class="row justify-content-center">
             <div class="col-md-10 year-border">
                 <div id="yearListContainer" class="row justify-content-center"></div>
@@ -17,7 +20,9 @@
 <!-- 複製用模板 -->
 <div id="template" class="d-none">
     <div class="content-container col-12 col-md-6 col-lg-4 col-xl-3">
-        <img class="content-image w-100" src="" alt="社會實踐照片" />
+        <div class="content-image-container">
+            <img class="content-image w-100" src="" alt="社會實踐照片" />
+        </div>
         <div>
             <p class="content-title"></p>
             <p class="content-date"></p>
@@ -171,6 +176,12 @@
         padding-bottom: 80px;
     }
 
+    .content-image-container {
+        min-height: 250px;
+        display: flex;
+        align-items: center;
+    }
+
     .content-title {
         margin-top: 15px;
         font-size: 25px;
@@ -221,6 +232,7 @@
         left: -105px;
         top: 63.2px;
         z-index: 100;
+        opacity: 0.2;
     }
 
     #img_star_big {
@@ -228,6 +240,7 @@
         right: 460px;
         top: 120px;
         z-index: 100;
+        opacity: 0.2;
     }
 
     #img_star_small {
@@ -235,5 +248,20 @@
         right: 396px;
         top: 170px;
         z-index: 100;
+        opacity: 0.2;
+    }
+
+    @media (min-width: 1023px) {
+        #img_plant {
+            opacity: 1;
+        }
+
+        #img_star_big {
+            opacity: 1;
+        }
+
+        #img_star_small {
+            opacity: 1;
+        }
     }
 </style>
