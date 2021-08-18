@@ -1,0 +1,87 @@
+<div class="container-fluid my-5" style="position: relative;">
+    <h1 id="latestActivityTitle" class="w-100 text-center animate__animated animate__jello">近 期 活 動</h1>
+    <div id="activityContainer" class="justify-content-center row"></div>
+    <a id="latestActivityMore" class="text-decoration-none"
+        href="https://osausr.ntut.edu.tw/p/426-1001-33.php?Lang=zh-tw">更 多 資 訊 〉〉</a>
+</div>
+
+<!-- 複製用模板 -->
+<div id="activityTemplate" class="d-none">
+    <div class="activity-container col-12 col-lg-3 col-md-6">
+        <div class="d-flex flex-column mb-3 text-left">
+            <div class="activity-image-container">
+                <a class="activity-link" href="">
+                    <img class="activity-image rounded" src="" alt="活動圖片" />
+                </a>
+            </div>
+            <div class="activity-content-container">
+                <p class="activity-title"></p>
+                <p class="activity-text"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    #latestActivityMore {
+        position: absolute;
+        font-size: 25px;
+        line-height: 1.32;
+        font-weight: bold;
+        color: #000;
+        right: 5%;
+        bottom: -5%;
+    }
+
+    #latestActivityMore:hover {
+        color: #D05353;
+    }
+
+    #latestActivityTitle {
+        font-weight: bold !important;
+        color: #4998b2;
+        font-size: 40px;
+        line-height: 1.33;
+        margin: 158px 0px 48px;
+    }
+
+    .activity-content-container {
+        padding: 0 5%;
+    }
+
+    .activity-image-container {
+        margin-bottom: 40px;
+    }
+
+    .activity-title {
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 1.33;
+        letter-spacing: normal;
+        color: #707070;
+    }
+
+    .activity-text {
+        margin-top: 30px;
+        font-size: 25px;
+        font-weight: normal;
+        line-height: 1.32;
+        letter-spacing: normal;
+        color: #707070;
+    }
+</style>
+
+<script>
+    $(function () {
+        if (!latestActivity.length) { return }
+
+        for (let i = 0; i < Math.min(4, latestActivity.length); i++) {
+            const template = $('#activityTemplate').find('.activity-container').clone();
+            template.find('.activity-title').text(latestActivity[i].title);
+            template.find('.activity-text').text(latestActivity[i].text);
+            template.find('.activity-link').attr('href', latestActivity[i].link);
+            template.find('.activity-image').attr('src', latestActivity[i].image);
+            $('#activityContainer').append(template);
+        }
+    });
+</script>
