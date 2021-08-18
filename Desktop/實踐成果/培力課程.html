@@ -1,0 +1,239 @@
+<div id="coursesContainer">
+    <div class="container-fluid px-0">
+        <p id="coursesTitle" class="w-100 text-center animate__animated animate__jello">社 會 實 踐 課 程</p>
+        <img id="img_plant" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3357/107723121.png" alt="星球">
+        <img id="img_star_big" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/840449648.png" alt="星星">
+        <img id="img_star_small" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/194586544.png" alt="星星">
+        <div id="yearMenu" class="row justify-content-center">
+            <div class="col-md-10 year-border">
+                <div id="yearListContainer" class="row justify-content-center"></div>
+            </div>
+        </div>
+        <div id="contentsContainer" class="row"></div>
+        <div id="courseTablePaginate" class="d-flex justify-content-center mt-5"></div>
+    </div>
+</div>
+
+<!-- 複製用模板 -->
+<div id="template" class="d-none">
+    <div class="content-container col-12 col-md-6 col-lg-4 col-xl-3">
+        <img class="content-image w-100" src="" alt="社會實踐照片" />
+        <div>
+            <p class="content-title"></p>
+            <p class="content-date"></p>
+        </div>
+    </div>
+    <div class="paginate">
+        <span></span>
+    </div>
+</div>
+
+<script>
+    const pageItemsNumber = customPaginateOffset || 8;
+
+    $(function () {
+        // 製作學年度選單
+        generateYearList();
+    });
+
+    function generateYearList(yearList) {
+        if (!yearListData.length) { return }
+
+        for (let i = 0; i < yearListData.length; i++) {
+            const yearText = $(`<p class="year-text">${yearListData[i]} 學年度</p>`);
+            yearText.bind('click', { year: yearListData[i] }, setYearActive)
+            $('#yearListContainer').append(yearText);
+        }
+
+        const currentYear = new Date().getFullYear() - 1911;
+
+        // 初始帶入當下學年度資料
+        setYearActive({
+            data: {
+                year: yearListData.includes(currentYear) ? currentYear : yearList[0],
+            }
+        });
+    }
+
+    function setYearActive(e) {
+        const data = e.data;
+        $('.year-text').removeClass('active');
+        $('.year-text').each(function (index) {
+            if ($(this).text().includes(String(data.year))) {
+                $(this).addClass('active');
+            }
+        });
+
+        // 製作課程內容
+        generateTable({
+            data: {
+                page: 0,
+                year: data.year,
+            }
+        });
+    }
+
+    function navigatorPage(e) {
+        const data = e.data;
+        window.open(
+            data.link,
+            '_blank'
+        );
+    }
+
+    function generateTable(e) {
+        const data = e.data;
+
+        if (!courseData.length) { return }
+
+        // filter 學年度顯示
+        const displayData = courseData.filter((course) => {
+            return course.year == data.year;
+        });
+
+        $('#contentsContainer').html('');
+        // 帶入課程資料
+        for (let i = data.page * pageItemsNumber; i < Math.min(displayData.length, data.page * pageItemsNumber + pageItemsNumber); i++) {
+            const template = $('#template').find('.content-container').clone();
+            template.find('.content-title').text(displayData[i].title);
+            template.find('.content-date').text(displayData[i].date);
+            template.find('.content-date').text(displayData[i].date);
+            template.find('.content-image').attr('src', displayData[i].image);
+            template.bind('click', { link: displayData[i].link }, navigatorPage);
+            $('#contentsContainer').append(template);
+        }
+
+        if (!displayData.length) {
+            Swal.fire({
+                icon: "warning",
+                title: "該學年無課程資料!",
+                showConfirmButton: false,
+            });
+        }
+
+        // 製作頁碼選單
+        generatePaginate(data.page, data.year, displayData);
+    }
+
+    function generatePaginate(currentPage, year, displayData) {
+        $('#courseTablePaginate').html('');
+        for (let i = 0; i < Math.ceil(displayData.length / pageItemsNumber); i++) {
+            const paginate = $('#template').find('.paginate').clone();
+            paginate.find('span').text(i + 1);
+            i === currentPage ? paginate.addClass('paginate-activate') : null;
+            paginate.bind('click', { page: i, year }, generateTable);
+            $('#courseTablePaginate').append(paginate);
+        }
+    }
+</script>
+
+
+<style type="text/css">
+    #coursesContainer {
+        padding: 0 10%;
+        position: relative;
+    }
+
+    #coursesTitle {
+        margin: 113px 0px 30px;
+        font-size: 40px;
+        color: #4998b2;
+        font-weight: bold;
+        letter-spacing: normal;
+        line-height: 1.33;
+    }
+
+    .year-border {
+        border-top: 1px solid #707070;
+        border-bottom: 1px solid #707070;
+    }
+
+    .year-text {
+        margin: 13.5px 25px;
+        cursor: pointer;
+        font-size: 30px;
+        line-height: 1.33;
+        letter-spacing: 3px;
+        color: #cecece;
+        z-index: 101;
+    }
+
+    .active {
+        color: #707070;
+    }
+
+    #contentsContainer {
+        margin-top: 63.5px;
+    }
+
+    .content-container {
+        cursor: pointer;
+        padding-bottom: 80px;
+    }
+
+    .content-title {
+        margin-top: 15px;
+        font-size: 25px;
+        line-height: 1.32;
+        letter-spacing: normal;
+        color: #707070;
+    }
+
+    .content-date {
+        font-size: 21px;
+        line-height: 1.33;
+        letter-spacing: normal;
+        color: #9e9e9e;
+    }
+
+    #courseTablePaginate {
+        margin-bottom: 60px;
+    }
+
+    /* PAGINATES */
+    .paginate {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        color: #4998b2;
+        margin: 0 16px 0 0;
+        border: solid 1px #ebebeb;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .paginate:hover {
+        color: #ffffff;
+        background-color: rgba(73, 152, 178, 0.56);
+    }
+
+    .paginate-activate {
+        color: #ffffff;
+        background-color: rgba(73, 152, 178, 0.56);
+    }
+
+    /* ICONS */
+    #img_plant {
+        position: absolute;
+        left: -105px;
+        top: 63.2px;
+        z-index: 100;
+    }
+
+    #img_star_big {
+        position: absolute;
+        right: 460px;
+        top: 120px;
+        z-index: 100;
+    }
+
+    #img_star_small {
+        position: absolute;
+        right: 396px;
+        top: 170px;
+        z-index: 100;
+    }
+</style>

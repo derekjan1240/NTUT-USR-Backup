@@ -1,0 +1,150 @@
+<script>
+    /* 每頁顯示數量 */
+    const customPaginateOffset = 8;
+
+    /* 學年度列表 */
+    const yearListData = [110, 109, 108, 107];
+
+    /**
+      * year: '學年度'
+      * title: '課程名稱',
+      * image: '課程縮圖網址',
+      * date: '課程日期',
+      * link: '課程連結',
+    */
+    const courseData = [
+        {
+            year: 110,
+            image: 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3370/2.png',
+            title: '110 原民部落社會實踐',
+            date: '2020.07.09',
+            link: 'https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw',
+        },
+        {
+            year: 110,
+            image: 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3370/2.png',
+            title: '110 原民部落社會實踐',
+            date: '2020.07.09',
+            link: 'https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw',
+        },
+        {
+            year: 110,
+            image: 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3370/2.png',
+            title: '110 原民部落社會實踐',
+            date: '2020.07.09',
+            link: 'https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw',
+        },
+        {
+            year: 109,
+            image: 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3370/2.png',
+            title: '原民部落社會實踐',
+            date: '2020.07.09',
+            link: 'https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw',
+        },
+        {
+            year: 109,
+            image: 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3370/2.png',
+            title: '原民部落社會實踐',
+            date: '2020.07.09',
+            link: 'https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw',
+        },
+        {
+            year: 109,
+            image: 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3370/2.png',
+            title: '原民部落社會實踐',
+            date: '2020.07.09',
+            link: 'https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw',
+        },
+        {
+            year: 109,
+            image: 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3370/2.png',
+            title: '原民部落社會實踐',
+            date: '2020.07.09',
+            link: 'https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw',
+        },
+        {
+            year: 108,
+            image: 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3370/2.png',
+            title: '108 原民部落社會實踐',
+            date: '2020.07.09',
+            link: 'https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw',
+        },
+        {
+            year: 108,
+            image: 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3370/2.png',
+            title: '108 原民部落社會實踐',
+            date: '2020.07.09',
+            link: 'https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw',
+        },
+        {
+            year: 107,
+            image: 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3370/2.png',
+            title: '107 原民部落社會實踐',
+            date: '2020.07.09',
+            link: 'https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw',
+        },
+        {
+            year: 107,
+            image: 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3370/2.png',
+            title: '107 原民部落社會實踐',
+            date: '2020.07.09',
+            link: 'https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw',
+        },
+        {
+            year: 107,
+            image: 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3370/2.png',
+            title: '107 原民部落社會實踐',
+            date: '2020.07.09',
+            link: 'https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw',
+        },
+        {
+            year: 107,
+            image: 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3370/2.png',
+            title: '107 原民部落社會實踐',
+            date: '2020.07.09',
+            link: 'https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw',
+        },
+        {
+            year: 107,
+            image: 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3370/2.png',
+            title: '107 原民部落社會實踐',
+            date: '2020.07.09',
+            link: 'https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw',
+        },
+        {
+            year: 107,
+            image: 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3370/2.png',
+            title: '107 原民部落社會實踐',
+            date: '2020.07.09',
+            link: 'https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw',
+        },
+        {
+            year: 107,
+            image: 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3370/2.png',
+            title: '107 原民部落社會實踐',
+            date: '2020.07.09',
+            link: 'https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw',
+        },
+        {
+            year: 107,
+            image: 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3370/2.png',
+            title: '107 原民部落社會實踐',
+            date: '2020.07.09',
+            link: 'https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw',
+        },
+        {
+            year: 107,
+            image: 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3370/2.png',
+            title: '107 原民部落社會實踐',
+            date: '2020.07.09',
+            link: 'https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw',
+        },
+        {
+            year: 107,
+            image: 'https://osausr.ntut.edu.tw/var/file/1/1001/img/3370/2.png',
+            title: '107 原民部落社會實踐',
+            date: '2020.07.09',
+            link: 'https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw',
+        },
+    ];
+</script>
