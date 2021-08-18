@@ -1,70 +1,43 @@
 <div id="courseContainer" class="container-fluid" style="position: relative;">
     <h1 id="courseTitle" class="w-100 text-center animate__animated animate__jello">社 會 實 踐 課 程</h1>
-    <div id="courseContentsContainer" class="justify-content-center row">
-        <!-- 01 -->
-        <div class="col-12 col-xl-6 p-30">
-            <!-- 課程連結 -->
-            <a href="https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw" target="on_blank">
-                <!-- 圖片連結 -->
-                <div class="course-container"
-                    style="background: url(https://osausr.ntut.edu.tw/var/file/1/1001/img/3370/2.png); background-size:cover;">
-                    <img class="triangle-image" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3332/316146766.png">
-                    <div class="course-content-container">
-                        <p class="course-content-date">2020.12.10</p>
-                        <p class="course-content-title">原民部落社會實踐</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!-- 02 -->
-        <div class="col-12 col-xl-6 p-30">
-            <!-- 課程連結 -->
-            <a href="https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw">
-                <!-- 圖片連結 -->
-                <div class="course-container"
-                    style="background: url(https://osausr.ntut.edu.tw/var/file/1/1001/img/3332/2674659.png); background-size:cover;">
-                    <img class="triangle-image" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3332/316146766.png">
-                    <div class="course-content-container">
-                        <p class="course-content-date">2020.12.10</p>
-                        <p class="course-content-title">敬請期待｜敬請期待 敬請期待</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!-- 03 -->
-        <div class="col-12 col-xl-6 p-30">
-            <!-- 課程連結 -->
-            <a href="https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw">
-                <!-- 圖片連結 -->
-                <div class="course-container"
-                    style="background: url(https://osausr.ntut.edu.tw/var/file/1/1001/img/3332/2674659.png); background-size:cover;">
-                    <img class="triangle-image" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3332/316146766.png">
-                    <div class="course-content-container">
-                        <p class="course-content-date">2020.12.10</p>
-                        <p class="course-content-title">敬請期待｜敬請期待 敬請期待</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!-- 04 -->
-        <div class="col-12 col-xl-6 p-30">
-            <!-- 課程連結 -->
-            <a href="https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw">
-                <!-- 圖片連結 -->
-                <div class="course-container"
-                    style="background: url(https://osausr.ntut.edu.tw/var/file/1/1001/img/3332/2674659.png); background-size:cover;">
-                    <img class="triangle-image" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3332/316146766.png">
-                    <div class="course-content-container">
-                        <p class="course-content-date">2020.12.10</p>
-                        <p class="course-content-title">敬請期待｜敬請期待 敬請期待</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
+    <div id="courseContentsContainer" class="justify-content-center row"></div>
     <a id="courseMore" class="text-decoration-none" href="https://osausr.ntut.edu.tw/p/426-1001-42.php?Lang=zh-tw">更 多 資
         訊 〉〉</a>
 </div>
+
+<!-- 複製用模板 -->
+<div id="courseTemplate" class="d-none">
+    <div class="course col-12 col-xl-6 p-30">
+        <!-- 課程連結 -->
+        <a class="course-content-link" href="https://osausr.ntut.edu.tw/p/426-1001-34.php?Lang=zh-tw">
+            <!-- 圖片連結 -->
+            <div class="course-container"
+                style="background: url(https://osausr.ntut.edu.tw/var/file/1/1001/img/3332/2674659.png); background-size:cover;">
+                <img class="triangle-image" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3332/316146766.png">
+                <div class="course-content-container">
+                    <p class="course-content-date"></p>
+                    <p class="course-content-title"></p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        if (!courseData.length) { return }
+
+        for (let i = 0; i < Math.min(4, courseData.length); i++) {
+            const template = $('#courseTemplate').find('.course').clone();
+            template.find('.course-container').css("background", `url(${courseData[i].image})`);
+            template.find('.course-container').css("background-size", `cover`);
+            template.find('.course-content-date').text(courseData[i].date);
+            template.find('.course-content-title').text(courseData[i].title);
+            template.find('.course-content-link').attr('href', courseData[i].link);
+            $('#courseContentsContainer').append(template);
+        }
+    });
+</script>
 
 <style>
     #courseContainer {
