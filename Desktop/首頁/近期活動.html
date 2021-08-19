@@ -30,7 +30,7 @@
         font-weight: bold;
         color: #000;
         right: 5%;
-        bottom: initial;
+        bottom: inherit;
     }
 
     @media (min-width: 767px) {
@@ -48,7 +48,13 @@
         color: #4998b2;
         font-size: 40px;
         line-height: 1.33;
-        margin: 158px 0px 48px;
+        margin: initial;
+    }
+
+    @media (min-width: 767px) {
+        #latestActivityTitle {
+            margin: 158px 0px 48px;
+        }
     }
 
     .activity-content-container {
