@@ -1,6 +1,8 @@
-<div class="wrapper" data-aos="zoom-in" data-aos-offset="0" data-aos-delay="300" data-aos-duration="500">
+<section id="announcementListSection">
+    <img class="bg-image" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3359/416610935.png" alt="背景圖"
+        data-aos="zoom-in" data-aos-offset="0" data-aos-delay="100" data-aos-duration="500">
     <div class="row">
-        <h1 class="announcement-list-title w-100 text-center m-0">最 新 公 告</h1>
+        <h1 class="announcement-list-title text-center w-100 animate__animated animate__jello">最 新 公 告</h1>
     </div>
     <div class="row justify-content-center">
         <hr class="announcement-hr">
@@ -9,13 +11,19 @@
         <div id="announcementListContainer"></div>
     </div>
     <div id="announcementPaginate" class="d-flex justify-content-center mt-5"></div>
-</div>
+</section>
 <div id="template" class="d-none">
     <div class="paginate">
         <span></span>
     </div>
 </div>
 <style>
+    /* 複寫 Rpage */
+    .mtitle {
+        padding: 8px 0 !important;
+        border-bottom: 1px solid #d3d3d3;
+    }
+
     .mtitle i {
         white-space: nowrap;
         padding: 12px 1em;
@@ -33,12 +41,18 @@
         top: 18px;
     }
 
-    #pageptlistWrapper {
-        max-height: 600px;
+    /* UI */
+    #announcementListSection {
+        margin: 153px 0 90px;
+        position: relative;
+    }
+
+    .bg-image {
+        position: absolute;
+        top: -120px;
     }
 
     .announcement-list-title {
-        padding-top: 153px;
         white-space: nowrap;
         font-family: 'SegoeUI';
         font-size: 40px !important;
@@ -55,9 +69,8 @@
         max-width: 80vw;
     }
 
-    .announcement-background {
-        position: absolute;
-        top: 0;
+    #pageptlistWrapper {
+        max-height: 600px;
     }
 
     #pageptlist {
@@ -69,21 +82,6 @@
         width: 100%;
         padding: 0 15%;
         margin-bottom: 200px;
-    }
-
-    .wrapper {
-        margin-top: 120px;
-        width: 100vw;
-        background: url(https://osausr.ntut.edu.tw/var/file/1/1001/img/3359/416610935.png);
-    }
-
-    .mtitle {
-        padding: 8px 0 !important;
-        border-bottom: 1px solid #d3d3d3;
-    }
-
-    #announcementPaginate {
-        margin-bottom: 90px;
     }
 
     .paginate {
