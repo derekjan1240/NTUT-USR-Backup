@@ -1,0 +1,118 @@
+<!-- swiper 套件引入 -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<script type="text/javascript" src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<style>
+    #videoInfoContainer {
+        padding: 0 4%;
+        margin-bottom: 100px;
+    }
+
+    #videoInfoTitle {
+        font-weight: bold !important;
+        color: #4998b2;
+        font-size: 40px;
+        line-height: 1.33;
+        margin: 180px 0px 50px;
+    }
+
+    .swiper-container {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .video-card {
+        width: 100%;
+    }
+
+    .yt-video {
+        min-height: 264px;
+    }
+
+    .video-card>hr {
+        margin: 25px 0 20px;
+        border: solid 1px #707070;
+    }
+
+    .video-card-title {
+        font-size: 21px;
+        font-weight: normal;
+        line-height: 1.33;
+        letter-spacing: normal;
+        text-align: left;
+        color: #9e9e9e;
+    }
+
+    .video-card-text {
+        font-size: 25px;
+        font-weight: normal;
+        line-height: 1.32;
+        letter-spacing: normal;
+        text-align: left;
+        color: #707070;
+    }
+</style>
+
+<div id="videoInfoContainer" class="container-fluid">
+    <h1 id="videoInfoTitle" class="w-100 text-center animate__animated animate__jello">影 音 資 訊</h1>
+    <div class="row">
+        <div class="col-12">
+            <div class="swiper-container video-info-swiper">
+                <div class="swiper-wrapper"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 複製用模板 -->
+<div id="videoInfoTemplate" class="d-none">
+    <div class="swiper-slide">
+        <div class="row w-100">
+        </div>
+    </div>
+    <!-- 幻燈片 -->
+    <div class="video-card-container col-12 col-md-6 col-lg-3">
+        <div class="d-flex flex-column video-card">
+            <iframe src="" frameborder="0" class="yt-video"></iframe>
+            <hr>
+            <p class="video-card-title"></p>
+            <p class="video-card-text"></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        if (!videoInfo.length) { return }
+        let slide = null;
+        for (let i = 0; i < videoInfo.length; i++) {
+            const isFirstSlide = i % 4 === 0;
+            // 製作幻燈片
+            const template = $('#videoInfoTemplate').find('.video-card-container').clone();
+            template.find('.yt-video').attr('src', `https://www.youtube.com/embed/${videoInfo[i].yt}`);
+            template.find('.video-card-title').text(videoInfo[i].title);
+            template.find('.video-card-text').text(videoInfo[i].text);
+
+            if (isFirstSlide) {
+                // 插入上一頁幻燈片容器
+                $('.swiper-wrapper').append(slide);
+                // 製作這一頁幻燈片容器
+                slide = $('#videoInfoTemplate').find('.swiper-slide').clone();
+            }
+            // 添加幻燈片進容器
+            slide.find('.row').append(template);
+
+            if (i === videoInfo.length - 1) {
+                $('.swiper-wrapper').append(slide);
+                const swiper = new Swiper('.video-info-swiper', {
+                    spaceBetween: 30,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                });
+            }
+        }
+    });
+</script>
