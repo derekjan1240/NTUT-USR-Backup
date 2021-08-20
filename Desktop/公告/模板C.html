@@ -6,38 +6,37 @@
     <hr />
     <div class="row justify-content-center">
         <!-- 這裡為公告圖片 -->
-        <img alt="圖片載入失敗" class="w-100 p-5" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/hakani.jpg"
-            style="max-width: 80%;" />
+        <img alt="圖片載入失敗" class="w-100 p-5" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/hakani.jpg" />
     </div>
     <!-- 這裡為活動簡介 -->
     <div class="row" style="margin-top: 10rem;">
         <!-- 活動簡介區塊 -->
-        <div class="col-2 p-2 pr-5 bd-highlight border-right">
+        <div class="col-4 col-md-2 p-2 pr-5 bd-highlight border-right">
             <h1 class="text-right text-secondary announcement-sub-title">活動簡介</h1>
         </div>
-        <div class="col p-2 pl-5 bd-highlight">
-            <h2 class="text-secondary">
+        <div class="col-8 col-md-10 p-2 pl-5 bd-highlight">
+            <p class="text-secondary">
                 2019臺北科大文化事業發展系USR成果展【繽紛客家‧食尚關西】展出主題以文化傳遞與在地創生為宗旨，乃為無邊界大學教育創新思維出發之下，由大學社會責任實踐(USR)計畫帶領同學走出校園教室，選定多元文化共融的客庄—關西作為實作場域，藉由臺灣客家族群飲食文化符碼，運用陶土、紙張、彩妝等媒材，以及手作圖繪、桌遊、魔術等媒介，著力於臺灣客家飲食文化的轉譯與傳遞，呈現客家文化的繽紛絢彩，強化學生的族群素養與跨文化力之養成，並展現臺北科大文化事業發展系戮力實踐大學社會責任之行動實作力。
-            </h2>
+            </p>
             <br>
-            <h2 class="text-secondary">
+            <p class="text-secondary">
                 本成果展自11月20日起，至12月6日，在人文實驗室展出，現場除了教學成果之外，同時展出史上首部且堪稱為關西大百科的《關西鎮志》，以及光緒年間迄今已有百餘年歷史的關西地區墾契拓板，見證18世紀中葉起新竹地區木板印刷業之發展。
-            </h2>
+            </p>
         </div>
     </div>
     <!-- 這裡為活動資訊 -->
     <div class="row" style="margin-top: 10rem;">
         <!-- 活動資訊區塊 -->
-        <div class="col-2 p-2 pr-5 bd-highlight border-right">
+        <div class="col-4 col-md-2 p-2 pr-5 bd-highlight border-right">
             <h1 class="text-right text-secondary announcement-sub-title">活動資訊</h1>
         </div>
-        <div class="col p-2 pl-5 bd-highlight">
-            <h2 class="text-secondary">展覽：【繽紛客家‧食尚關西】</h2>
-            <h2 class="text-secondary">USR成果展 展期：2019/11/20（三）～12/06（三）</h2>
-            <h2 class="text-secondary">地點：臺北科技大學 人文實驗室（四教104）</h2>
-            <h2 class="text-secondary">聯絡：（02）27712171*3071陳小姐</h2>
+        <div class="col-8 col-md-10 col-lg-5 p-2 pl-5 bd-highlight">
+            <p class="text-secondary">展覽：【繽紛客家‧食尚關西】</p>
+            <p class="text-secondary">USR成果展 展期：2019/11/20（三）～12/06（三）</p>
+            <p class="text-secondary">地點：臺北科技大學 人文實驗室（四教104）</p>
+            <p class="text-secondary">聯絡：（02）27712171*3071陳小姐</p>
         </div>
-        <div class="col p-2 pl-5 bd-highlight">
+        <div class="col-12 col-lg-5 p-2 pl-5 bd-highlight mt-5 mt-lg-0">
             <!-- 這裡為活動資訊圖片 -->
             <img alt="圖片載入失敗" class="w-100" src="https://osausr.ntut.edu.tw/var/file/1/1001/img/hakani_location.jpg" />
         </div>
@@ -60,6 +59,12 @@
         margin-top: 5vh;
     }
 
+    .breadcrumb {
+        height: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
     .PtStatistic {
         margin: 50px;
     }
@@ -70,7 +75,13 @@
     }
 
     .announcement-sub-title {
+        margin: 0 !important;
+        font-size: 30px !important;
         letter-spacing: 5px;
+    }
+
+    .text-secondary {
+        font-size: 25px;
     }
 
     hr {
@@ -83,9 +94,15 @@
     }
 
     .post-title {
-        margin-top: 118px;
-        font-size: 38px;
+        margin-top: 50px !important;
+        font-size: 38px !important;
         color: #000000;
+    }
+
+    @media (min-width: 767px) {
+        .post-title {
+            margin-top: 118px !important;
+        }
     }
 
     .border-right {
