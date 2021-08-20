@@ -1,7 +1,7 @@
 <!-- 公告模板 C -->
 <div id="announcementContainer" class="container-fluid">
     <div class="row">
-        <h1 class="post-title">【繽紛客家‧食尚關西】臺北科大文化事業發展系 2019 USR成果展</h1>
+        <h1 class="post-title">【活動】公告模板 C</h1>
     </div>
     <hr />
     <div class="row justify-content-center">
@@ -15,11 +15,11 @@
             <h1 class="text-right text-secondary announcement-sub-title">活動簡介</h1>
         </div>
         <div class="col-8 col-md-10 p-2 pl-5 bd-highlight">
-            <p class="text-secondary">
+            <p class="text-secondary announcement-content">
                 2019臺北科大文化事業發展系USR成果展【繽紛客家‧食尚關西】展出主題以文化傳遞與在地創生為宗旨，乃為無邊界大學教育創新思維出發之下，由大學社會責任實踐(USR)計畫帶領同學走出校園教室，選定多元文化共融的客庄—關西作為實作場域，藉由臺灣客家族群飲食文化符碼，運用陶土、紙張、彩妝等媒材，以及手作圖繪、桌遊、魔術等媒介，著力於臺灣客家飲食文化的轉譯與傳遞，呈現客家文化的繽紛絢彩，強化學生的族群素養與跨文化力之養成，並展現臺北科大文化事業發展系戮力實踐大學社會責任之行動實作力。
             </p>
             <br>
-            <p class="text-secondary">
+            <p class="text-secondary announcement-content">
                 本成果展自11月20日起，至12月6日，在人文實驗室展出，現場除了教學成果之外，同時展出史上首部且堪稱為關西大百科的《關西鎮志》，以及光緒年間迄今已有百餘年歷史的關西地區墾契拓板，見證18世紀中葉起新竹地區木板印刷業之發展。
             </p>
         </div>
@@ -31,10 +31,12 @@
             <h1 class="text-right text-secondary announcement-sub-title">活動資訊</h1>
         </div>
         <div class="col-8 col-md-10 col-lg-5 p-2 pl-5 bd-highlight">
-            <p class="text-secondary">展覽：【繽紛客家‧食尚關西】</p>
-            <p class="text-secondary">USR成果展 展期：2019/11/20（三）～12/06（三）</p>
-            <p class="text-secondary">地點：臺北科技大學 人文實驗室（四教104）</p>
-            <p class="text-secondary">聯絡：（02）27712171*3071陳小姐</p>
+            <div id="announcementInfo">
+                <p class="text-secondary announcement-content">展覽：【繽紛客家‧食尚關西】</p>
+                <p class="text-secondary announcement-content">USR成果展 展期：2019/11/20（三）～12/06（三）</p>
+                <p class="text-secondary announcement-content">地點：臺北科技大學 人文實驗室（四教104）</p>
+                <p class="text-secondary announcement-content">聯絡：（02）27712171*3071陳小姐</p>
+            </div>
         </div>
         <div class="col-12 col-lg-5 p-2 pl-5 bd-highlight mt-5 mt-lg-0">
             <!-- 這裡為活動資訊圖片 -->
@@ -74,26 +76,8 @@
         margin-top: 120px;
     }
 
-    .announcement-sub-title {
-        margin: 0 !important;
-        font-size: 30px !important;
-        letter-spacing: 5px;
-    }
-
-    .text-secondary {
-        font-size: 25px;
-    }
-
-    hr {
-        border-top: 2px solid rgba(0, 0, 0, .1);
-    }
-
-    .text-secondary {
-        line-height: 1.5;
-        color: #6c757d !important;
-    }
-
     .post-title {
+        font-weight: bold !important;
         margin-top: 50px !important;
         font-size: 38px !important;
         color: #000000;
@@ -103,6 +87,32 @@
         .post-title {
             margin-top: 118px !important;
         }
+    }
+
+    hr {
+        border-top: 2px solid rgba(0, 0, 0, .1);
+    }
+
+    .announcement-sub-title {
+        margin: 0 !important;
+        font-size: 30px !important;
+        letter-spacing: normal !important;
+    }
+
+    .announcement-content {
+        margin: 0 !important;
+        font-size: 25px !important;
+        font-weight: normal !important;
+        line-height: 1.32 !important;
+        letter-spacing: normal !important;
+    }
+
+    #announcementInfo>.announcement-content {
+        line-height: 1.6 !important;
+    }
+
+    .text-secondary {
+        color: #6c757d !important;
     }
 
     .border-right {
