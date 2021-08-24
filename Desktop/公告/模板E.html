@@ -1,0 +1,245 @@
+<!-- 公告模板 D -->
+<style type="text/css">
+    /* 隱藏內建標題  */
+    .mpgtitle {
+        display: none;
+    }
+
+    .artctrl {
+        text-align: center;
+        margin-top: 0;
+        background: #efefef;
+    }
+
+    .mptattach {
+        font-size: 20px;
+        padding: 0 12vw;
+        margin-top: 5vh;
+    }
+
+    .PtStatistic {
+        margin: 50px;
+    }
+
+    #announcementContainer {
+        padding: 0;
+    }
+
+    section {
+        position: relative;
+    }
+
+    #usrLogoContainer {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        top: 5%;
+        cursor: pointer;
+    }
+
+    .arrow-container {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        bottom: 5%;
+        cursor: pointer;
+    }
+
+    #announcementBanner {
+        width: 100vw;
+        height: 100vh;
+        background: url('https://osausr.ntut.edu.tw/var/file/1/1001/img/3360/790393737.png');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .announcement-banner-title {
+        font-size: 40px;
+        line-height: 1.5;
+        font-weight: bold;
+    }
+
+    hr {
+        background-color: #efefef;
+        color: #efefef;
+        width: 10vw;
+        height: 5px;
+        text-shadow: rgb(0 0 0 / 50%) 0px 2px 10px;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }
+
+    .announcement-banner-sub-title {
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    .announcement-banner-remark {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    #announcementBannerContentContainer {
+        position: absolute;
+        top: 30vh;
+    }
+
+    .announcement-content-container {
+        min-height: 100vh;
+        padding: 5% 10%;
+    }
+
+    .announcement-content-title {
+        font-size: 35px;
+        font-weight: bold;
+        letter-spacing: 5px;
+        text-align: center;
+    }
+
+    .announcement-content {
+        font-size: 20px;
+        letter-spacing: 1.25px;
+        line-height: 2;
+        white-space: pre-line;
+    }
+
+    @media (min-width: 767px) {
+        .announcement-banner-title {
+            font-size: 60px;
+        }
+
+        .announcement-banner-sub-title {
+            font-size: 25px;
+        }
+
+        .announcement-banner-remark {
+            font-size: 20px;
+        }
+
+        .announcement-content-title {
+            font-size: 40px;
+        }
+
+        .announcement-content {
+            font-size: 25px;
+        }
+    }
+</style>
+
+<div id="announcementContainer" class="container-fluid">
+    <section id="announcementBanner">
+        <div id="usrLogoContainer" class="w-100">
+            <a href="/">
+                <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3332/1.png" width="143" alt="LOGO">
+            </a>
+        </div>
+        <div id="announcementBannerContentContainer" class="text-center text-light w-100">
+            <p class="announcement-banner-title p-5 mb-5">繽紛客家‧食尚關西</p>
+            <p class="announcement-banner-sub-title p-4 mb-5">臺北科大文化事業發展系 2019 USR成果展</p>
+            <hr>
+            <p class="announcement-banner-remark">2019.11.20</p>
+        </div>
+        <div class="arrow-container w-100" onclick="slideSection('#contentSection')">
+            <svg class="hvr-sink" width="25" height="15" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.5 0l-3 3.057L12.5 15l12-11.943L21.5 0l-9 9z" fill="#C71B0A" fill-rule="evenodd"></path>
+            </svg>
+        </div>
+    </section>
+    <section id="contentSection">
+        <div class="announcement-content-container" style="background: #efefef;">
+            <div class="container-fluid px-0">
+                <p class="announcement-content-title mt-5 mt-md-3 mt-lg-0">活動內容</p>
+                <div class="row align-items-center justify-content-center w-100 mt-5 mt-md-3" style="min-height: 70vh;">
+                    <div class="col-12 col-lg-6">
+                        <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/3196/602914842.jpg" alt="活動海報"
+                            class="announcement-content-map rounded w-100 p-5">
+                    </div>
+                    <div class="col-12 col-lg-6 p-md-5">
+                        <p class="announcement-content text-secondary">
+                            為能落實大學社會責任計畫，藉由跨校跨計畫的社群交流，增進校園對創新教學投入社會實踐及地方創生的推動能量，本年度與USR推動中心共同主辦
+                            110年SIG議題交流系列活動-第一場次【大學x部落 -
+                            啟動永續原動力】，此次SIG議題交流活動，將聚焦於大學專業與原住民部落的合作，協力推動原住民族永續發展，活動將邀請執行原鄉議題的大學團隊，針對課程的設計與場域夥伴的合作模式，進行經驗分享，促進學習與對話，形成大學與地方互動的有機學習生態！
+
+                            為能落實大學社會責任計畫，藉由跨校跨計畫的社群交流，增進校園對創新教學投入社會實踐及地方創生的推動能量，本年度與USR推動中心共同主辦
+                            110年SIG議題交流系列活動-第一場次【大學x部落 -
+                            啟動永續原動力】，此次SIG議題交流活動，將聚焦於大學專業與原住民部落的合作，協力推動原住民族永續發展，活動將邀請執行原鄉議題的大學團隊，針對課程的設計與場域夥伴的合作模式，進行經驗分享，促進學習與對話，形成大學與地方互動的有機學習生態！
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="arrow-container w-100" onclick="slideSection('#infoSection')">
+            <svg class="hvr-sink" width="25" height="15" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.5 0l-3 3.057L12.5 15l12-11.943L21.5 0l-9 9z" fill="#C71B0A" fill-rule="evenodd"></path>
+            </svg>
+        </div>
+    </section>
+    <section id="infoSection">
+        <div class="announcement-content-container" style="background: #334141;">
+            <div class="container-fluid px-0">
+                <p class="announcement-content-title text-light mt-5 mt-md-3 mt-lg-0">活動資訊</p>
+                <div class="d-flex align-items-center justify-content-center" style="min-height: 70vh;">
+
+                    <p class="announcement-content text-light text-center">
+                        活動日期：2020/06/24 (四) 09:00-12:30
+
+                        報名時間：即日起至 06/17(四) 17:00截止 (6/21 以 Email 通知網路報名成功者)
+
+                        報名網址：<a class="text-light" href="https://reurl.cc/MAd8e4"
+                            target="_blank">https://reurl.cc/MAd8e4</a>
+
+                        指導單位：教育部
+
+                        協辦單位：北科大社會責任辦公室、USR計畫原住民部落安居構築與綠色樂業推動計畫
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="arrow-container w-100" onclick="slideSection('#contractSection')">
+            <svg class="hvr-sink" width="25" height="15" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.5 0l-3 3.057L12.5 15l12-11.943L21.5 0l-9 9z" fill="#C71B0A" fill-rule="evenodd"></path>
+            </svg>
+        </div>
+    </section>
+    <section id="contractSection">
+        <div class="announcement-content-container" style="background: #efefef;">
+            <div class="container-fluid px-0">
+                <p class="announcement-content-title mt-5 mt-md-3 mt-lg-0">聯絡方式</p>
+                <div class="row align-items-center justify-content-center w-100 mt-5 mt-md-3" style="min-height: 70vh;">
+                    <div class="col-12 col-lg-6">
+                        <img src="https://osausr.ntut.edu.tw/var/file/1/1001/img/hakani_location.jpg" alt="活動地圖"
+                            class="announcement-content-map rounded w-100">
+                    </div>
+                    <div class="col-12 col-lg-6 p-md-5">
+                        <p class="announcement-content text-secondary text-center">
+                            社會責任辦公室　
+                            助理：張佳琳小姐
+                            02-2771-2171＃1220
+                            (lynnchang@mail.ntut.edu.tw)
+
+                            設計學院　
+                            計畫助理：王婕安小姐　
+                            02-2771-2171#2952
+                            (h227117@gmail.com)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    $(function () {
+        $('.breadcrumb').remove();
+        $('#Dyn_head').hide();
+    });
+
+    function slideSection(target) {
+        if (!target) { return }
+        console.log(target);
+        $('html, body').animate({
+            scrollTop: $(target).offset().top
+        }, 500);
+    }
+</script>
